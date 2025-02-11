@@ -11,7 +11,9 @@ font-family: "HancomMalangMalang-Regular";
 }
 body {
   font-family: "HancomMalangMalang-Bold";
+  overflow-x:hidden;
 }
+
 
 .regular-font {
   font-family: "HancomMalangMalang-Regular", sans-serif;
