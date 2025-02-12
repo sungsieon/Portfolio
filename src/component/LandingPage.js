@@ -11,7 +11,21 @@ export default function LandingPage() {
          setIsTriangle(true);
       }, 2800);
 
+ const handleScroll = () => {
+        if(window.scrollY > 100){
+          setIsTriangle(false)
+        }
+   }
+
+   window.addEventListener("scroll", handleScroll);
+
+
+
    },[]);
+
+  
+
+
 
   return (
     <div
@@ -24,11 +38,11 @@ export default function LandingPage() {
       }}
  >
    <div className="absolute top-[0%] left-[-34.2%] z-10 w-full h-full ">
-   <img className="rotate-[40deg] w-[83.5vw] h-[83.5vw] max-w-full max-h-full object-contain animate-move-rotate" src="/img/UFO1.png" />
+   <img className="rotate-[40deg] w-[83.5vw] h-[83.5vw] max-w-full max-h-full object-contain animate-move-rotate" src="/img/우주2.png" />
    </div>
    
    <div className="absolute top-[10%] left-[35%] max-[1750px]:left-[34.6%] w-full h-full">
-   <div className={isTriangle ? "w-0 h-0 border-l-[15vw] border-l-transparent border-r-[15vw] border-r-transparent max-[2000px]:border-b-[105vh]  max-[1750px]:border-b-[85vh]  max-[640px]:border-b-[85vh]  border-b-[#FFFA72] absolute bottom-0 transition-opacity duration-[4000ms] opacity-100" : "opacity-0"}/>
+   <div className={isTriangle ? "w-0 h-0 border-l-[15vw] border-l-transparent border-r-[15vw] border-r-transparent max-[2000px]:border-b-[105vh]  max-[1750px]:border-b-[85vh]  max-[640px]:border-b-[85vh]  border-b-[#FFFA72] absolute bottom-0 transition-opacity duration-[2000ms] opacity-100" : "opacity-0"}/>
    </div>  
     </div>
   );
