@@ -5,9 +5,8 @@ module.exports = {
     extend: {
       animation: {
         'move-rotate': 'moveRotate 2.5s  forwards ',
-        'move-opacity': 'moveopacity 2s forwards',
         'move-left': 'moveleft 2s forwards',
-        'move-right': 'moveright 2s forwards',
+        'move-right': 'moveright 2s forwards',   
       },
       keyframes: {
         moveRotate: {
@@ -18,19 +17,14 @@ module.exports = {
           '100%':{transform: 'translateX(42vw) translateY(-18vw) rotate(0deg) scale(0.25)'},
         },
 
-        moveopacity: {
-          '0%': {transform: 'translateX(0)', opacity:'1'},
-          '100%': {transform: 'translateX(-20rem)', opacity:'0'},
-        },
-
         moveleft: {
-          '0%': {transform: 'translateX(0)'},
-          '100%': {transform: 'translateX(-35rem)'},
+          '0%': {transform: 'translateX(0)',opacity:'0'},
+          '100%': {transform: 'translateX(-20vw)',opacity:'1'},
         },
 
         moveright: {
-          '0%': {transform: 'translateX(-35rem)', opacity:'0'},
-          '100%': {transform: 'translateX(0)',opacity:'1'},
+          '0%': {transform: 'translateX(-20rem)', opacity:'1'},
+          '100%': {transform: 'translateX(0)',opacity:'0'},
         },
       },
     },

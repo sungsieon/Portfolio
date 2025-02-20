@@ -1,55 +1,39 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect,useRef} from "react";
 
 export default function Introduction() {
   const [scrollTranslate, setScrollTranslate] = useState(true);
-  const [firstScroll, setFirstScroll] = useState(true);
-  const [isFixed, setIsFixed] = useState(false);
-  const [lastScrollTop, setLastScrollTop] = useState(0);
+  const [changeScroll,setChangeScroll] = useState(true);
+  const targetRef = useRef(null);
 
   useEffect(() => {
+
     const handleScroll = () => {
-      const targetElement = document.getElementById("target");
-      if (!targetElement) return;
-
-      const rect = targetElement.getBoundingClientRect();
-      const currentScrollTop = window.scrollY;
-
-      if (rect.top < window.innerHeight * 0.01 && !isFixed) {
-        setScrollTranslate(false);
-        setFirstScroll(false);
-        setIsFixed(true);
-        console.log("up");
+      if(targetRef.current){
+        const rect = targetRef.current.getBoundingClientRect();
+        if(rect.top < window.innerHeight * 0.7 && rect.bottom > 0){
+          setChangeScroll(false)
+        }else{
+          setChangeScroll(true)
+        }
       }
+    }
 
-      if (isFixed && currentScrollTop > lastScrollTop + 500) {
-        setIsFixed(false);
-      }
+    window.addEventListener("scroll",handleScroll);
+    handleScroll();
 
-      if (rect.top > window.innerHeight * 0.04 && !firstScroll) {
-        setScrollTranslate(true);
-        setIsFixed(true);
-        console.log("down");
-      }
+    return() => {
+      window.removeEventListener("scroll",handleScroll);
+    }
 
-  
-
-      setLastScrollTop(currentScrollTop);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-  }, [firstScroll]);
+  },[changeScroll]);
 
   return (
     <div
-      id="target"
-      className={`relative w-full min-h-screen bg-cover ${isFixed ? "fixed inset-0" : "relative w-full min-h-screen"}`}
+      className={`relative w-full min-h-screen bg-cover overflow-hidden z-20`}
       style={{
         backgroundImage: "url('/img/우주.png')",
         backgroundSize: "cover", // 배경이 꽉 차게 설정
         backgroundRepeat: "no-repeat", // 중복 방지
-        
-       
-
       }}
     >
       <div className="absolute left-[6%] top-[5%] max-[960px]:left-[11.5%]">
@@ -85,25 +69,18 @@ export default function Introduction() {
         />
       </div>
 
+
       <div
         className={
-          scrollTranslate
-            ? "flex items-center absolute left-[11.5%] top-[50%] animate-move-right"
-            : "flex items-center absolute left-[11.5%] top-[50%] animate-move-opacity"
+          "flex items-center absolute left-[11.5%] top-[50%] "
         }
       >
         <img className="w-14 h-14 object-contain " src="/img/rocket.png" />
         <p className="ml-[10px] text-[42px]">끊임없는 도전과 학습</p>
       </div>
 
-      <div className="absolute left-[15.2%] top-[59%] animate-move-right">
-        <p
-          className={
-            scrollTranslate
-              ? "regular-font text-[25px] animate-move-right "
-              : "animate-move-opacity ml-[10px] text-[42px]"
-          }
-        >
+      <div className="absolute left-[15.2%] top-[59%] ">
+        <p className={"regular-font text-[25px] "}>
           진로를 방황하던 중 웹 개발을 접하게 되었습니다.<br></br>
           생각한 대로 웹을 구현할 수 있다는 점에 큰 흥미를 느꼈습니다.<br></br>
           <br></br>이 길에 확신을 느끼고 개인 프로젝트와 공부를 시작했습니다.
@@ -119,22 +96,16 @@ export default function Introduction() {
 
       <div
         className={
-          scrollTranslate
-            ? "flex items-center absolute left-[80.5%] top-[50%] animate-move-right hidden"
-            : "flex items-center absolute left-[40.5%] top-[50%] animate-move-left"
+          "flex items-center absolute left-[45.5%] top-[50%] "
         }
+        id="target"
+      ref={targetRef}
       >
-        <img className="w-14 h-14 object-contain " src="/img/rocket.png" />
-        <p className="ml-[10px] text-[42px]">세심하고 효율적인 코드</p>
+        <img className={changeScroll ? "w-14 h-14 object-contain " : "w-14 h-14 object-contain animate-move-left"} src="/img/rocket.png" />
+        <p className="ml-[10px] text-[42px] z-10">세심하고 효율적인 코드</p>
       </div>
 
-      <div
-        className={
-          scrollTranslate
-            ? "absolute left-[80.5%] top-[59%] animate-move-right "
-            : "absolute left-[44.2%] top-[59%] animate-move-left z-20"
-        }
-      >
+      <div className={changeScroll ? "absolute left-[49%] top-[59%] z-10 " : "absolute left-[49%] top-[59%] z-10 animate-move-left "}>
         <p className="regular-font text-[25px]">
           웹 개발에 있어 무엇보다 중요한 점은 사용자의 편의라고 생각합니다.{" "}
           <br></br>
@@ -148,6 +119,7 @@ export default function Introduction() {
           만들어내고자 합니다.
         </p>
       </div>
+      
 
       <div className="absolute top-[10%] right-[-55%] w-full  max-[960px]:hidden">
         <img

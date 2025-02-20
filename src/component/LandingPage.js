@@ -7,7 +7,7 @@ export default function LandingPage() {
 
    useEffect(() => {
 
-      setTimeout(() => {
+    const timer = setTimeout(() => {
          setIsTriangle(true);
       }, 2800);
 
@@ -17,9 +17,12 @@ export default function LandingPage() {
         }
    }
 
-   window.addEventListener("scroll", handleScroll);
 
 
+   return () => {
+    clearTimeout(timer);
+    window.removeEventListener("scroll", handleScroll);
+ };
 
    },[]);
 
