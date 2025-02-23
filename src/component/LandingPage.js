@@ -3,11 +3,17 @@ import { useState, useEffect } from "react";
 
 export default function LandingPage() {
   const [isTriangle, setIsTriangle] = useState(false);
+  const [starTimer, setStarTimer] = useState(true)
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsTriangle(true);
     }, 2800);
+
+      const timer2 = setTimeout(() => {
+        setStarTimer(false)
+      },3900);
+   
 
     const handleScroll = () => {
       if (window.scrollY > 100) {
@@ -17,6 +23,7 @@ export default function LandingPage() {
 
     return () => {
       clearTimeout(timer);
+      clearTimeout(timer2);
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
@@ -24,7 +31,7 @@ export default function LandingPage() {
   return (
     // --------우주 배경---------
     <div
-      className="relative w-full min-h-screen bg-cover z-20 "
+      className="relative w-full min-h-screen bg-cover z-20 overflow-hidden "
       style={{
         backgroundImage: "url('/img/우주.png')",
         backgroundSize: "cover", 
@@ -35,27 +42,27 @@ export default function LandingPage() {
 
       
 
-      <div className="absolute top-[0%] left-[-34.2%] z-10 w-full h-full ">
+      <div className="absolute top-[0%] left-[-34.2%] z-20 w-full h-full ">
         <img
           className="rotate-[40deg] w-[83.5vw] h-[83.5vw] max-w-full max-h-full object-contain animate-move-rotate"
           src="/img/우주2.png"
         />
       </div>
      {/* ------------별 4개------------ */}
-      <div className="absolute top-1/2 left-[46.2%] w-full z-40">
-      <img className="w-[7vw] z-40" src="/img/star1.png"/>
+      <div className={starTimer ? "absolute top-1/2 left-[46.3%] w-full hidden" : "absolute top-1/2 left-[46.3%] w-full animate-star1-rotate"}>
+      <img className="w-[7vw] " src="/img/star1.png"/>
       </div>
 
-      <div className="absolute top-1/2 left-[46.2%] w-full z-40">
-      <img className="w-[7vw] z-40" src="/img/star1.png"/>
+      <div className={starTimer ? "absolute top-1/2 left-[46.3%] w-full hidden" : "absolute top-1/2 left-[46.3%] w-full animate-star2-rotate"}>
+      <img className="w-[7vw] " src="/img/star1.png"/>
       </div>
 
-      <div className="absolute top-1/2 left-[46.2%] w-full z-40">
-      <img className="w-[7vw] z-40" src="/img/star2.png"/>
+      <div className={starTimer ? "absolute top-1/2 left-[46.3%] w-full hidden" : "absolute top-1/2 left-[46.3%] w-full animate-star3-rotate"}>
+      <img className="w-[7vw] " src="/img/star2.png"/>
       </div>
 
-      <div className="absolute top-1/2 left-[46.2%] w-full z-40">
-      <img className="w-[7vw] z-40" src="/img/star2.png"/>
+      <div className={starTimer ? "absolute top-1/2 left-[46.3%] w-full hidden" : "absolute top-1/2 left-[46.3%] w-full animate-star4-rotate"}>
+      <img className="w-[7vw] " src="/img/star2.png"/>
       </div>
 
       {/* ------------------------------ */}
@@ -64,7 +71,7 @@ export default function LandingPage() {
         <div
           className={
             isTriangle
-              ? "w-0 h-0 border-l-[15vw] border-l-transparent border-r-[15vw] border-r-transparent max-[2000px]:border-b-[105vh]  max-[1750px]:border-b-[85vh]  max-[640px]:border-b-[85vh]  border-b-[#FFFA72] absolute bottom-0 transition-opacity duration-[2000ms] opacity-100"
+              ? "w-0 h-0 border-l-[15vw] border-l-transparent border-r-[15vw] border-r-transparent max-[2000px]:border-b-[105vh]  max-[1750px]:border-b-[85vh]  max-[640px]:border-b-[85vh]  border-b-[#FFFA72] absolute bottom-0 transition-opacity duration-[1500ms] opacity-100 z-10"
               : "opacity-0"
           }
         />

@@ -10,7 +10,7 @@ export default function Introduction() {
     const handleScroll = () => {
       if (targetRef.current) {
         const rect = targetRef.current.getBoundingClientRect();
-        if (rect.top < window.innerHeight * 0.7 && rect.bottom > 0) {
+        if (rect.top < window.innerHeight * 0.6 && rect.bottom > 0) {
           setChangeScroll(false);
           setChangeCount(1);
         } else {

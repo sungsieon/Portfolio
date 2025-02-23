@@ -4,12 +4,16 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        'move-rotate': 'moveRotate 2.5s  forwards ',
+        'move-rotate': 'moveRotate 2s  forwards ',
         'move-left': 'moveleft 2s forwards',
         'move-left-opacity': 'moveLeftOpacity 2s forwards',
         'move-right': 'moveright 2s forwards',  
         'move-right-opacity': 'moveRightOpacity 2s forwards', 
         'move-right-opacity2': 'moveright2 2s forwards',
+        'star1-rotate': 'starRotate1 1.3s forwards',
+        'star2-rotate': 'starRotate2 1.3s forwards',
+        'star3-rotate': 'starRotate3 1.3s forwards',
+        'star4-rotate': 'starRotate4 1.3s forwards',
       },
       keyframes: {
         moveRotate: {
@@ -18,6 +22,26 @@ module.exports = {
           '70%':{transform: 'translateX(5vw) rotate(20deg) scale(0.3)  '},
           '90%':{transform: 'translateX(55vw) translateY(-18vw) rotate(-20deg) scale(0.25)'},
           '100%':{transform: 'translateX(42vw) translateY(-18vw) rotate(0deg) scale(0.25)'},
+        },
+
+        starRotate1: {
+          '0%': {transform: 'scale(1) translateX(0) translateY(0vw) rotate(0deg)'},
+          '100%':{transform: 'scale(1.9) translateX(-12vw) translateY(-43vw) rotate(-50deg) '},
+        },
+
+        starRotate2: {
+          '0%': {transform: 'scale(1) translateY(0vw) translateX(0) rotate(0deg)'},
+          '100%':{transform: 'scale(1.4) translateY(45vw) translateX(25vw) rotate(50deg) '},
+        },
+
+        starRotate3: {
+          '0%': {transform: 'scale(1) translateY(0vw) translateX(0) rotate(0deg)'},
+          '100%':{transform: 'scale(1.2) translateY(26vw) translateX(10vw) rotate(50deg) '},
+        },
+
+        starRotate4: {
+          '0%': {transform: 'scale(1) translateY(0vw) translateX(0) rotate(0deg)'},
+          '100%':{transform: 'scale(1) translateY(-20vw) translateX(-43vw) rotate(-50deg) '},
         },
 
         moveleft: {
