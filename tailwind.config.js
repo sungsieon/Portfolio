@@ -6,7 +6,10 @@ module.exports = {
       animation: {
         'move-rotate': 'moveRotate 2.5s  forwards ',
         'move-left': 'moveleft 2s forwards',
-        'move-right': 'moveright 2s forwards',   
+        'move-left-opacity': 'moveLeftOpacity 2s forwards',
+        'move-right': 'moveright 2s forwards',  
+        'move-right-opacity': 'moveRightOpacity 2s forwards', 
+        'move-right-opacity2': 'moveright2 2s forwards',
       },
       keyframes: {
         moveRotate: {
@@ -19,11 +22,26 @@ module.exports = {
 
         moveleft: {
           '0%': {transform: 'translateX(0)',opacity:'0'},
-          '100%': {transform: 'translateX(-20vw)',opacity:'1'},
+          '100%': {transform: 'translateX(-33.7vw)',opacity:'1'},
+        },
+
+        moveLeftOpacity: {
+          '0%': {transform: 'translateX(0)',opacity:'1'},
+          '100%': {transform: 'translateX(-33.7vw)',opacity:'0'},
         },
 
         moveright: {
-          '0%': {transform: 'translateX(-20rem)', opacity:'1'},
+          '0%': {transform: 'translateX(-33.7vw)', opacity:'1'},
+          '100%': {transform: 'translateX(0)',opacity:'0'},
+        },
+
+        moveRightOpacity: {
+          '0%': {transform: 'translateX(-33.7vw)',opacity:'0'},
+          '100%': {transform: 'translateX(0)',opacity:'1'},
+        },
+
+        moveright2: {
+          '0%': {transform: 'translateX(-33.7vw)', opacity:'1'},
           '100%': {transform: 'translateX(0)',opacity:'0'},
         },
       },

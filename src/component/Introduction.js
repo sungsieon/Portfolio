@@ -1,31 +1,31 @@
-import { useState, useEffect,useRef} from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function Introduction() {
   const [scrollTranslate, setScrollTranslate] = useState(true);
-  const [changeScroll,setChangeScroll] = useState(true);
+  const [changeScroll, setChangeScroll] = useState(true);
+  const [changeCount, setChangeCount] = useState(0);
   const targetRef = useRef(null);
 
   useEffect(() => {
-
     const handleScroll = () => {
-      if(targetRef.current){
+      if (targetRef.current) {
         const rect = targetRef.current.getBoundingClientRect();
-        if(rect.top < window.innerHeight * 0.7 && rect.bottom > 0){
-          setChangeScroll(false)
-        }else{
-          setChangeScroll(true)
+        if (rect.top < window.innerHeight * 0.7 && rect.bottom > 0) {
+          setChangeScroll(false);
+          setChangeCount(1);
+        } else {
+          setChangeScroll(true);
         }
       }
-    }
+    };
 
-    window.addEventListener("scroll",handleScroll);
+    window.addEventListener("scroll", handleScroll);
     handleScroll();
 
-    return() => {
-      window.removeEventListener("scroll",handleScroll);
-    }
-
-  },[changeScroll]);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [changeScroll]);
 
   return (
     <div
@@ -55,31 +55,36 @@ export default function Introduction() {
       <div className="flex items-center absolute left-[12%] top-[44%]">
         <div
           className={
-            scrollTranslate
+            changeScroll
               ? "bg-[#9EDE52] rounded-3xl w-8 h-8"
               : "bg-[#9EDE52] rounded-3xl w-[25px] h-[25px]"
           }
         />
         <div
           className={
-            scrollTranslate
+            changeScroll
               ? "bg-white ml-[8px] rounded-3xl w-[25px] h-[25px]"
               : "bg-white ml-[8px] rounded-3xl w-8 h-8"
           }
         />
       </div>
 
-
       <div
-        className={
-          "flex items-center absolute left-[11.5%] top-[50%] "
-        }
+        className={`flex items-center absolute left-[11.5%] top-[50%] w-full
+          ${changeScroll ? "" : "animate-move-left-opacity"}
+          ${changeCount && changeScroll ? "animate-move-right-opacity" : ""}
+        `}
       >
         <img className="w-14 h-14 object-contain " src="/img/rocket.png" />
         <p className="ml-[10px] text-[42px]">끊임없는 도전과 학습</p>
       </div>
 
-      <div className="absolute left-[15.2%] top-[59%] ">
+      <div
+        className={`absolute left-[15.2%] top-[59%]
+        ${changeScroll ? "" : "animate-move-left-opacity"}
+        ${changeCount && changeScroll ? "animate-move-right-opacity" : ""}
+        `}
+      >
         <p className={"regular-font text-[25px] "}>
           진로를 방황하던 중 웹 개발을 접하게 되었습니다.<br></br>
           생각한 대로 웹을 구현할 수 있다는 점에 큰 흥미를 느꼈습니다.<br></br>
@@ -95,17 +100,23 @@ export default function Introduction() {
       </div>
 
       <div
-        className={
-          "flex items-center absolute left-[45.5%] top-[50%] "
-        }
+        className={`flex items-center absolute left-[45.5%] top-[50%] opacity-0 w-full
+         ${changeScroll ? "" : "animate-move-left"}
+         ${changeScroll && changeCount ? "animate-move-right-opacity2" : ""}
+       `}
         id="target"
-      ref={targetRef}
+        ref={targetRef}
       >
-        <img className={changeScroll ? "w-14 h-14 object-contain " : "w-14 h-14 object-contain animate-move-left"} src="/img/rocket.png" />
+        <img className="w-14 h-14 object-contain " src="/img/rocket.png" />
         <p className="ml-[10px] text-[42px] z-10">세심하고 효율적인 코드</p>
       </div>
 
-      <div className={changeScroll ? "absolute left-[49%] top-[59%] z-10 " : "absolute left-[49%] top-[59%] z-10 animate-move-left "}>
+      <div
+        className={`absolute left-[49%] top-[59%] z-10 opacity-0 
+        ${changeScroll ? "" : "animate-move-left"}
+        ${changeScroll && changeCount ? "animate-move-right-opacity2" : ""} 
+         `}
+      >
         <p className="regular-font text-[25px]">
           웹 개발에 있어 무엇보다 중요한 점은 사용자의 편의라고 생각합니다.{" "}
           <br></br>
@@ -119,7 +130,6 @@ export default function Introduction() {
           만들어내고자 합니다.
         </p>
       </div>
-      
 
       <div className="absolute top-[10%] right-[-55%] w-full  max-[960px]:hidden">
         <img
