@@ -34,6 +34,7 @@ export default function Introduction() {
         backgroundImage: "url('/img/우주.png')",
         backgroundSize: "cover", // 배경이 꽉 차게 설정
         backgroundRepeat: "no-repeat", // 중복 방지
+        backgroundAttachment: "fixed", 
       }}
     >
       <div className="absolute left-[6%] top-[5%] max-[960px]:left-[11.5%]">
