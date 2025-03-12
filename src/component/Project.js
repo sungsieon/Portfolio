@@ -42,7 +42,7 @@ export default function Project() {
         상세내용
       </span>
      
-     <div className="flex ml-[24vw] items-center">
+     <div className="flex max-[541px]:ml-0 ml-[24vw] items-center">
       <div className="mr-[2vw]  w-[25vw] ">
           <h1 className="max-[1070px]:hidden text-[3rem]">Pokedex</h1>
           <p className="max-[1070px]:hidden text-[1.2rem]">
