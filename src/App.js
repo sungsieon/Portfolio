@@ -4,6 +4,7 @@ import LandingPage from './component/LandingPage';
 import Introduction from './component/Introduction';
 import Skill from './component/Skill';
 import Project from './component/Project';
+import Contact from './component/Contact';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
     <Introduction />
     <Skill />
     <Project />
+    <Contact />
     </>
   );
 }
