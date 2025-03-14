@@ -5,16 +5,22 @@ import Introduction from './component/Introduction';
 import Skill from './component/Skill';
 import Project from './component/Project';
 import Contact from './component/Contact';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 
 function App() {
   return (
-    <>
-    <LandingPage />
-    <Introduction />
-    <Skill />
-    <Project />
-    <Contact />
-    </>
+    <Router>
+      <div>
+        <LandingPage />
+        <Introduction />
+        <Skill />
+        <Project />
+        <Contact />
+      </div>
+    <Routes>
+  
+    </Routes>
+    </Router>
   );
 }
 

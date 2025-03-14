@@ -1,6 +1,12 @@
 import { useState, useEffect, useRef } from "react";
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export default function Project() {
+
+ 
+
+
   return (
     <div
       className="relative w-full min-h-full bg-cover z-20 overflow-x-hidden "
@@ -69,6 +75,33 @@ export default function Project() {
       <span className="absolute top-[65vw] left-[45.3vw] max-[1070px]:hidden text-[#9EDE52] border-2 border-[#9EDE52] p-1 rounded-[15px] cursor-pointer ">
         상세내용
       </span>
+
+
+      <div className="flex mt-[10vw] max-[854px]:mt-[10vw] max-[462px]:mt-[10vw] h-full">
+        <div className="ml-[10vw] w-[40vw] min-w-[20rem] border-8 border-[#9EDE52] rounded-[6px] overflow-hidden  ">
+          <img
+            className="w-full  grayscale rounded-[1px] outline outline-2 outline-black  "
+            src="/img/포폴.png"
+          />
+        </div>
+
+        <div className="ml-[2vw]  w-[25vw] ">
+          <h1 className="max-[1070px]:hidden text-[3rem]">Web Portfolio</h1>
+          <p className="max-[1070px]:hidden text-[1.2rem]">
+            2025.2.1 ~ 2025.2.25
+          </p>
+
+          <p className="max-[1070px]:hidden mb-12">
+            Wep Portfolio는 제 소개와 쓸 수 있는 기술,프로젝트 등이 정리되어 있습니다.
+          </p>
+        </div>
+      </div>
+
+      <span className="absolute top-[95.7vw] left-[51.6vw] max-[1070px]:hidden text-[#9EDE52] border-2 border-[#9EDE52] p-1 rounded-[15px] cursor-pointer ">
+        상세내용
+      </span>
+
+      
     </div>
   );
 }
