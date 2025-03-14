@@ -4,7 +4,19 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Project() {
 
- 
+  const navigate = useNavigate();
+
+  const goToFoodFinder = () => {
+    navigate('/foodFinder')
+  }
+
+  const goToPokedex = () => {
+    navigate('/pokedex')
+  }
+
+  const goToWebPortfolio = () => {
+    navigate('/webPortfolio')
+  }
 
 
   return (
@@ -44,7 +56,7 @@ export default function Project() {
         </div>
       </div>
 
-      <span className="absolute top-[31vw] left-[51.6vw] max-[1070px]:hidden text-[#9EDE52] border-2 border-[#9EDE52] p-1 rounded-[15px] cursor-pointer ">
+      <span onClick={goToFoodFinder} className="absolute top-[31vw] left-[51.6vw] max-[1070px]:hidden text-[#9EDE52] border-2 border-[#9EDE52] p-1 rounded-[15px] cursor-pointer ">
         상세내용
       </span>
      
@@ -72,7 +84,7 @@ export default function Project() {
 
 
       </div>
-      <span className="absolute top-[65vw] left-[45.3vw] max-[1070px]:hidden text-[#9EDE52] border-2 border-[#9EDE52] p-1 rounded-[15px] cursor-pointer ">
+      <span onClick={goToPokedex} className="absolute top-[65vw] left-[45.3vw] max-[1070px]:hidden text-[#9EDE52] border-2 border-[#9EDE52] p-1 rounded-[15px] cursor-pointer ">
         상세내용
       </span>
 
@@ -97,7 +109,7 @@ export default function Project() {
         </div>
       </div>
 
-      <span className="absolute top-[95.7vw] left-[51.6vw] max-[1070px]:hidden text-[#9EDE52] border-2 border-[#9EDE52] p-1 rounded-[15px] cursor-pointer ">
+      <span onClick={goToWebPortfolio} className="absolute top-[95.7vw] left-[51.6vw] max-[1070px]:hidden text-[#9EDE52] border-2 border-[#9EDE52] p-1 rounded-[15px] cursor-pointer ">
         상세내용
       </span>
 
