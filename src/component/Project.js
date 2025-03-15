@@ -44,7 +44,7 @@ export default function Project() {
         </div>
 
         <div className="ml-[2vw]  w-[25vw] ">
-          <h1 className="max-[1070px]:hidden text-[3rem]">foodFinder</h1>
+          <h1 className="max-[1070px]:hidden text-[3rem]">FoodFinder</h1>
           <p className="max-[1070px]:hidden text-[1.2rem]">
             2024.12.26 ~ 2025.1.12
           </p>

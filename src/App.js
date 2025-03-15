@@ -12,7 +12,7 @@ import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-route
 
 function App() {
   return (
-    <Router>
+    <Router >
       <Routes>
         {/* 기본 경로에서 전체 페이지 렌더링 */}
         <Route
