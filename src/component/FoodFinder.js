@@ -30,14 +30,14 @@ export default function FoodFinder(){
 
     {/* header */}
     <div className="w-full flex justify-between items-center ">
-    <div onClick={goHome} className="w-[3rem] fill-[#9EDE52]"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></div>
-    <a href="https://github.com/sungsieon"><div className="border-2 rounded-[20px] border-[#9EDE52] p-2 cursor-pointer"><span className="text-[#9EDE52]">GitHub</span></div></a>
+    <div onClick={goHome} className="w-[3rem] fill-[#9EDE52] cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></div>
+    <a href="https://github.com/sungsieon"><div className="border-2 rounded-[20px] border-[#9EDE52] p-2 cursor-pointer hover:bg-white"><span className="text-[#9EDE52]">GitHub</span></div></a>
     </div>
 
 
     <h1 className="mt-[2.5rem] text-[40px] text-[#9EDE52]">FoodFinder</h1>   
     <div className="mt-[3rem] w-full h-auto bg-black  shadow-xl shadow-[#6a942e]">
-    <div className="p-8 text-[1.4rem] max-[1173px]:text-[1.3rem] max-[973px]:text-[1.1rem] leading-[4rem]">
+    <div className="p-8 text-[1.4rem] max-[1173px]:text-[1.3rem] max-[973px]:text-[1.1rem] leading-[3rem]">
     <p><span className="text-[#9EDE52]">FoodFinder</span>는 부산 맛집을 쉽고 빠르게 검색할 수 있는 웹 애플리케이션입니다. </p>
     <p>회원가입 시, 정보를 로컬 스토리지에 저장합니다.</p>
     <p>로그인 시, 저장된 정보와 일치하면 메인 화면으로 이동합니다.</p>
@@ -63,7 +63,7 @@ export default function FoodFinder(){
 
     <h1 className="mt-[5rem] text-[40px] text-[#9EDE52]">트러블슈팅</h1>
     <div className="mt-[2rem] w-full h-auto bg-black  shadow-xl shadow-[#6a942e]">
-    <div className="p-8 text-[1.4rem] max-[1173px]:text-[1.3rem] max-[973px]:text-[1.1rem] leading-[4rem]">
+    <div className="p-8 text-[1.4rem] max-[1173px]:text-[1.3rem] max-[973px]:text-[1.1rem] leading-[3rem]">
     <p>가게별로 예약일을 저장해야 했는데, 처음에는 모든 예약일을 </p>
     <p>  하나의 상태에서 관리하려다 보니 가게별로 따로 저장하기가 어려웠다.</p>
     <p> 이 문제를 해결하기 위해 데이터를 객체 형태로 정리하고, </p>
