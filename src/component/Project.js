@@ -93,7 +93,7 @@ export default function Project() {
         <div className="ml-[10vw] w-[40vw] min-w-[20rem] border-8 border-[#9EDE52] rounded-[6px] overflow-hidden  ">
           <img
             className="w-full  grayscale rounded-[1px] outline outline-2 outline-black  "
-            src="/img/포폴.png"
+            src="/img/PP.png"
           />
         </div>
 
