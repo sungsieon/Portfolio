@@ -4,13 +4,16 @@ import { useState, useEffect, useRef } from "react";
 
 export default function FoodFinder(){
 
-
+   
 
     const goHome = () => {
       window.history.back();
     }
 
-
+    
+      useEffect(() => {
+        window.scrollTo(0, 0); // 페이지 진입 시 맨 위로 이동
+      }, []);
 
     return(
         
@@ -34,7 +37,7 @@ export default function FoodFinder(){
 
     <h1 className="mt-[2.5rem] text-[40px] text-[#9EDE52]">FoodFinder</h1>   
     <div className="mt-[3rem] w-full h-auto bg-black  shadow-xl shadow-[#6a942e]">
-    <div className="p-8 text-[1.4rem] max-[1173px]:text-[1.3rem] max-[973px]:text-[1.1rem] leading-[3rem]">
+    <div className="p-8 text-[1.4rem] max-[1173px]:text-[1.3rem] max-[973px]:text-[1.1rem] leading-[4rem]">
     <p><span className="text-[#9EDE52]">FoodFinder</span>는 부산 맛집을 쉽고 빠르게 검색할 수 있는 웹 애플리케이션입니다. </p>
     <p>회원가입 시, 정보를 로컬 스토리지에 저장합니다.</p>
     <p>로그인 시, 저장된 정보와 일치하면 메인 화면으로 이동합니다.</p>
@@ -60,7 +63,7 @@ export default function FoodFinder(){
 
     <h1 className="mt-[5rem] text-[40px] text-[#9EDE52]">트러블슈팅</h1>
     <div className="mt-[2rem] w-full h-auto bg-black  shadow-xl shadow-[#6a942e]">
-    <div className="p-8 text-[1.4rem] max-[1173px]:text-[1.3rem] max-[973px]:text-[1.1rem] leading-[3rem]">
+    <div className="p-8 text-[1.4rem] max-[1173px]:text-[1.3rem] max-[973px]:text-[1.1rem] leading-[4rem]">
     <p>가게별로 예약일을 저장해야 했는데, 처음에는 모든 예약일을 </p>
     <p>  하나의 상태에서 관리하려다 보니 가게별로 따로 저장하기가 어려웠다.</p>
     <p> 이 문제를 해결하기 위해 데이터를 객체 형태로 정리하고, </p>

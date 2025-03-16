@@ -7,6 +7,10 @@ export default function WebPortfolio(){
     window.history.back();
   }
 
+  useEffect(() => {
+    window.scrollTo(0, 0); // 페이지 진입 시 맨 위로 이동
+  }, []);
+
     return(
         <>
         <div
