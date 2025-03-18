@@ -16,13 +16,13 @@ export default function Contact() {
     }}
   >
 
-<div className="absolute left-[6%] top-[5%] max-[960px]:left-[11.5%]">
+<div className="ml-[6rem] mt-[3rem] max-[480px]:ml-[2rem]">
         <h2 className="text-[50px] max-[800px]:text-[30px]">
           <span className="mr-[25px] text-[#9EDE52]">04</span> Contact
         </h2>
       </div>
 
-  <div className="flex w-[50rem] max-[777px]:w-full p-[30px] justify-between  items-center text-center mt-[15vw] m-auto flex-col">
+  <div className="flex w-[50rem] max-[777px]:w-full p-[30px] justify-between  items-center text-center mt-[5vw] m-auto flex-col">
     <span className="text-[25px]">
     <p className="text-[80px] max-[432px]:text-[60px]">감사합니다.</p>
     <br></br> <br></br>

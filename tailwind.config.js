@@ -46,12 +46,12 @@ module.exports = {
 
         moveleft: {
           '0%': {transform: 'translateX(0)',opacity:'0'},
-          '100%': {transform: 'translateX(-33.7vw)',opacity:'1'},
+          '100%': {transform: 'translateX(-79vw)',opacity:'1'},
         },
 
         moveLeftOpacity: {
           '0%': {transform: 'translateX(0)',opacity:'1'},
-          '100%': {transform: 'translateX(-33.7vw)',opacity:'0'},
+          '100%': {transform: 'translateX(-79vw)',opacity:'0'},
         },
 
         moveright: {
@@ -60,13 +60,13 @@ module.exports = {
         },
 
         moveRightOpacity: {
-          '0%': {transform: 'translateX(-33.7vw)',opacity:'0'},
+          '0%': {transform: 'translateX(-79vw)',opacity:'0'},
           '100%': {transform: 'translateX(0)',opacity:'1'},
         },
 
         moveright2: {
-          '0%': {transform: 'translateX(-33.7vw)', opacity:'1'},
-          '100%': {transform: 'translateX(0)',opacity:'0'},
+          '0%': {transform: 'translateX(-79vw)', opacity:'1'},
+          '100%': {transform: 'translateX(0vw)',opacity:'0'},
         },
       },
     },

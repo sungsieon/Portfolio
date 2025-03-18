@@ -29,13 +29,13 @@ export default function Project() {
         backgroundAttachment: "fixed",
       }}
     >
-      <div className="absolute left-[6%] top-[5%] max-[960px]:left-[11.5%]">
-        <h2 className="text-[50px] max-[800px]:text-[30px]">
+      <div className="ml-[6rem] mt-[3rem] max-[480px]:ml-[2rem]">
+        <h2 className="text-[50px] max-[800px]:text-[40px]">
           <span className="mr-[25px] text-[#9EDE52]">03</span> Projects
         </h2>
       </div>
 
-      <div className="flex mt-[13vw] max-[854px]:mt-[15vw] max-[462px]:mt-[25vw] h-full">
+      <div className="flex mt-[5vw] max-[854px]:mt-[15vw] max-[462px]:mt-[25vw] h-full">
         <div className="ml-[10vw] w-[40vw] min-w-[20rem] border-8 border-[#9EDE52] rounded-[6px] overflow-hidden  ">
           <img
             className="w-full  grayscale rounded-[1px] outline outline-2 outline-black  "
