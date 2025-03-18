@@ -10,6 +10,9 @@ export default function Introduction() {
 
   useEffect(() => {
     const handleScroll = () => {
+
+      if (sessionStorage.getItem("cameFromFoodFinder")) return;
+
       if (targetRef.current) {
         const rect = targetRef.current.getBoundingClientRect();
         const currentScrollY = window.scrollY;

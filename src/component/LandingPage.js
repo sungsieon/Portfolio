@@ -1,11 +1,12 @@
 import Introduction from "./Introduction";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function LandingPage() {
   const [isTriangle, setIsTriangle] = useState(false);
   const [starTimer, setStarTimer] = useState(true);
   const [mainText, setMainText] = useState(false);
-
+  const targetRef = useRef();
+  
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsTriangle(true);
@@ -44,6 +45,30 @@ export default function LandingPage() {
         backgroundAttachment: "fixed",
       }}
     >
+    <div className="fixed top-[5%] right-[2%]">
+    <div className="flex gap-[10px]">
+      <div className="flex gap-[20.7px] items-end flex-col">
+        <span>Main</span>
+        <span>About</span>
+        <span>Skill</span>
+        <span>Project</span>
+        <span>Contact</span>
+      </div>
+      <div className="flex gap-[3px] flex-col items-center">
+        <span>01</span>
+        <span className="flex flex-col  w-[2px] h-[15px] bg-white"></span>
+        <span>02</span>
+        <span className="flex flex-col  w-[2px] h-[15px] bg-white"></span>
+        <span>03</span>
+        <span className="flex flex-col  w-[2px] h-[15px] bg-white"></span>
+        <span>04</span>
+        <span className="flex flex-col  w-[2px] h-[15px] bg-white"></span>
+        <span>05</span>
+      </div>
+    </div>
+</div>
+
+
       <div
         className={`
     absolute w-full top-[42vh] flex justify-center flex-wrap z-20 
