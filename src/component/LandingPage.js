@@ -5,26 +5,38 @@ export default function LandingPage() {
   const [isTriangle, setIsTriangle] = useState(false);
   const [starTimer, setStarTimer] = useState(true);
   const [mainText, setMainText] = useState(false);
-  const targetRef = useRef();
+  const [mainLight,setMainLight] = useState(false)
+  const targetRef = useRef(null);
   
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsTriangle(true);
-    }, 2800);
+    }, 2200);
 
     const portfolioText = setTimeout(() => {
       setMainText(true);
-    }, 3600);
+    }, 3200);
 
     const timer2 = setTimeout(() => {
       setStarTimer(false);
-    }, 3800);
+    }, 3400);
 
     const handleScroll = () => {
       if (window.scrollY > 100) {
         setIsTriangle(false);
       }
     };
+    
+   
+     
+    
+
+     const rect = targetRef.current.getBoundingClientRect();
+
+     if(targetRef.current){
+      if (rect.top <= window.innerHeight * 0.9) {
+      setMainLight(true)
+     }}
 
     return () => {
       clearTimeout(timer);
@@ -32,12 +44,14 @@ export default function LandingPage() {
       clearTimeout(portfolioText);
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  },[]);
+ 
 
   return (
     // --------우주 배경---------
-    <div
-      className="relative w-full min-h-screen bg-cover z-20 overflow-hidden "
+    <div 
+      ref={targetRef}
+      className="relative  min-h-screen bg-cover z-20  "
       style={{
         backgroundImage: "url('/img/우주.png')",
         backgroundSize: "cover",
@@ -48,14 +62,14 @@ export default function LandingPage() {
     <div className="fixed top-[5%] right-[2%]">
     <div className="flex gap-[10px]">
       <div className="flex gap-[20.7px] items-end flex-col">
-        <span>Main</span>
+        <span className={mainLight ? 'text-[#9EDE52]' : ""}>Main</span>
         <span>About</span>
         <span>Skill</span>
         <span>Project</span>
         <span>Contact</span>
       </div>
       <div className="flex gap-[3px] flex-col items-center">
-        <span>01</span>
+        <span className={mainLight ? 'text-[#9EDE52]' : ""}>01</span>
         <span className="flex flex-col  w-[2px] h-[15px] bg-white"></span>
         <span>02</span>
         <span className="flex flex-col  w-[2px] h-[15px] bg-white"></span>

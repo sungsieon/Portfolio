@@ -10,6 +10,7 @@ export default function Skill() {
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundAttachment: "fixed",
+          zIndex: 0,
         }}
       >
         <div className="ml-[6rem] mt-[3rem] max-[480px]:ml-[2rem]">
