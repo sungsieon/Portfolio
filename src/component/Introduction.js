@@ -1,12 +1,14 @@
 import { useState, useEffect, useRef } from "react";
 
-export default function Introduction() {
+
+export default function Introduction(colorRef) {
   const [scrollTranslate, setScrollTranslate] = useState(true);
   const [changeScroll, setChangeScroll] = useState(true);
   const [changeCount, setChangeCount] = useState(0);
   const prevScrollY = useRef(window.scrollY);
   const hasPaused = useRef(false);
   const targetRef = useRef(null);
+  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,6 +60,7 @@ export default function Introduction() {
 
   return (
     <div
+      
       className={`relative w-full min-h-screen bg-cover overflow-hidden z-20`}
       style={{
         backgroundImage: "url('/img/우주.png')",
@@ -67,7 +70,7 @@ export default function Introduction() {
         zIndex: 0,
       }}
     >
-      <div className="ml-[6rem] mt-[3rem] max-[480px]:ml-[2rem]">
+      <div className="ml-[6rem] mt-[7rem] max-[480px]:ml-[2rem] ">
         <span className="text-[50px] max-[800px]:text-[40px]">
           <span className="mr-[25px] text-[#9EDE52]">01</span>About me
         </span>
@@ -173,5 +176,6 @@ export default function Introduction() {
         />
       </div>
     </div>
+    
   );
 }

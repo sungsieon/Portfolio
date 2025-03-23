@@ -5,8 +5,9 @@ export default function LandingPage() {
   const [isTriangle, setIsTriangle] = useState(false);
   const [starTimer, setStarTimer] = useState(true);
   const [mainText, setMainText] = useState(false);
-  const [mainLight,setMainLight] = useState(false)
-  const targetRef = useRef(null);
+  const [mainLight,setMainLight] = useState(0);
+  
+ 
   
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -26,17 +27,25 @@ export default function LandingPage() {
         setIsTriangle(false);
       }
     };
-    
-   
-     
-    
 
-     const rect = targetRef.current.getBoundingClientRect();
 
-     if(targetRef.current){
-      if (rect.top <= window.innerHeight * 0.9) {
-      setMainLight(true)
-     }}
+    
+    const handleScroll2 = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+
+      setMainLight(scrollPercent)
+
+      console.log("현재 스크롤 위치:", scrollPercent);
+    };
+
+  
+
+
+
+    window.addEventListener("scroll",handleScroll2 )
+
 
     return () => {
       clearTimeout(timer);
@@ -50,7 +59,6 @@ export default function LandingPage() {
   return (
     // --------우주 배경---------
     <div 
-      ref={targetRef}
       className="relative  min-h-screen bg-cover z-20  "
       style={{
         backgroundImage: "url('/img/우주.png')",
@@ -62,22 +70,22 @@ export default function LandingPage() {
     <div className="fixed top-[5%] right-[2%]">
     <div className="flex gap-[10px]">
       <div className="flex gap-[20.7px] items-end flex-col">
-        <span className={mainLight ? 'text-[#9EDE52]' : ""}>Main</span>
-        <span>About</span>
-        <span>Skill</span>
-        <span>Project</span>
-        <span>Contact</span>
+        <span className={mainLight >= 0 && mainLight < 10 ? "text-[#9EDE52]" : ""}>Main</span>
+        <span className={mainLight >= 10 && mainLight < 30 ? "text-[#9EDE52]" : ""} >About</span>
+        <span className={mainLight >= 30 && mainLight < 50 ? "text-[#9EDE52]" : ""}>Skill</span>
+        <span className={mainLight >= 50 && mainLight < 88 ? "text-[#9EDE52]" : ""}>Project</span>
+        <span className={mainLight >= 88 && mainLight < 110 ? "text-[#9EDE52]" : ""}>Contact</span>
       </div>
       <div className="flex gap-[3px] flex-col items-center">
-        <span className={mainLight ? 'text-[#9EDE52]' : ""}>01</span>
+        <span className={mainLight >= 0 && mainLight < 10 ? "text-[#9EDE52]" : ""}>01</span>
         <span className="flex flex-col  w-[2px] h-[15px] bg-white"></span>
-        <span>02</span>
+        <span className={mainLight >= 10 && mainLight < 30 ? "text-[#9EDE52]" : ""}>02</span>
         <span className="flex flex-col  w-[2px] h-[15px] bg-white"></span>
-        <span>03</span>
+        <span className={mainLight >= 30 && mainLight < 50 ? "text-[#9EDE52]" : ""}>03</span>
         <span className="flex flex-col  w-[2px] h-[15px] bg-white"></span>
-        <span>04</span>
+        <span className={mainLight >= 50 && mainLight < 88 ? "text-[#9EDE52]" : ""}>04</span>
         <span className="flex flex-col  w-[2px] h-[15px] bg-white"></span>
-        <span>05</span>
+        <span className={mainLight >= 88 && mainLight < 110 ? "text-[#9EDE52]" : ""}>05</span>
       </div>
     </div>
 </div>
