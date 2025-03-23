@@ -11,16 +11,16 @@ export default function Skill() {
           backgroundRepeat: "no-repeat",
           backgroundAttachment: window.innerWidth <= 430 ? "scroll" : "fixed",
           zIndex: 0,
-          height: "100dvh",
+          minHeight: "-webkit-fill-available",
         }}
       >
-        <div className="ml-[6rem] mt-[3rem] max-[480px]:ml-[2rem]">
+        <div className="ml-[6rem] mt-[3rem] max-[480px]:ml-[2rem] max-[430px]:mt-[0]">
           <h2 className="text-[50px] max-[800px]:text-[40px]">
             <span className="mr-[25px] text-[#9EDE52]">02</span> Skills
           </h2>
         </div>
 
-        <div className="w-full ml-[20rem] mt-[5rem] grid grid-cols-[repeat(2,minmax(0,0.3fr))]  gap-40 max-[1197px]:ml-[8rem] max-[800px]:ml-[3rem] max-[800px]:gap-20  max-[600px]:grid-cols-[repeat(1,minmax(0,0.3fr))] max-[600px]:gap-2 max-[600px]:mt-[6rem]">
+        <div className="w-full ml-[20rem] mt-[5rem] grid grid-cols-[repeat(2,minmax(0,0.3fr))]  gap-40 max-[1197px]:ml-[8rem] max-[800px]:ml-[3rem] max-[800px]:gap-20  max-[600px]:grid-cols-[repeat(1,minmax(0,0.3fr))] max-[600px]:gap-2 max-[600px]:mt-[6rem] max-[430px]:mt-[1rem]">
           <div className="flex items-center">
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
