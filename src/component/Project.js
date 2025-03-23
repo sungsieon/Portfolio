@@ -25,11 +25,13 @@ export default function Project() {
   const goToPokedex = () => {
     navigate("/pokedex");
     sessionStorage.setItem("scrollPosition", window.scrollY);
+    sessionStorage.setItem("cameFromFoodFinder", "true");
   };
 
   const goToWebPortfolio = () => {
     navigate("/webPortfolio");
     sessionStorage.setItem("scrollPosition", window.scrollY);
+    sessionStorage.setItem("cameFromFoodFinder", "true");
   };
 
   return (
@@ -39,7 +41,7 @@ export default function Project() {
         backgroundImage: "url('/img/우주.png')",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed",
+        backgroundAttachment: window.innerWidth <= 430 ? "scroll" : "fixed",
         zIndex: 0,
       }}
     >

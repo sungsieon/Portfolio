@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 
 export default function Pokedex() {
   const goHome = () => {
+    
     window.history.back();
   };
 

@@ -9,7 +9,7 @@ export default function Skill() {
           backgroundImage: "url('/img/우주.png')",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed",
+          backgroundAttachment: window.innerWidth <= 430 ? "scroll" : "fixed",
           zIndex: 0,
         }}
       >

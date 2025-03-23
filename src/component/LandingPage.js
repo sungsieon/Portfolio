@@ -64,7 +64,7 @@ export default function LandingPage() {
         backgroundImage: "url('/img/우주.png')",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed",
+        backgroundAttachment: window.innerWidth <= 430 ? "scroll" : "fixed",
       }}
     >
     <div className="fixed top-[5%] right-[2%]">
@@ -72,8 +72,24 @@ export default function LandingPage() {
       <div className="flex gap-[20.7px] items-end flex-col">
         <span className={mainLight >= 0 && mainLight < 10 ? "text-[#9EDE52]" : ""}>Main</span>
         <span className={mainLight >= 10 && mainLight < 30 ? "text-[#9EDE52]" : ""} >About</span>
-        <span className={mainLight >= 30 && mainLight < 50 ? "text-[#9EDE52]" : ""}>Skill</span>
-        <span className={mainLight >= 50 && mainLight < 88 ? "text-[#9EDE52]" : ""}>Project</span>
+        <span className={`
+        ${window.innerWidth <= 430
+          ? mainLight >= 30 && mainLight < 60
+            ? "text-[#9EDE52]"
+            : ""
+          : mainLight >=30 && mainLight < 50
+          ? "text-[#9EDE52]"
+          : ""}
+      `}>Skill</span>
+        <span className={`
+        ${window.innerWidth <= 430
+          ? mainLight >= 60 && mainLight < 88
+            ? "text-[#9EDE52]"
+            : ""
+          : mainLight >=50 && mainLight < 88
+          ? "text-[#9EDE52]"
+          : ""}
+      `}>Project</span>
         <span className={mainLight >= 88 && mainLight < 110 ? "text-[#9EDE52]" : ""}>Contact</span>
       </div>
       <div className="flex gap-[3px] flex-col items-center">
@@ -81,9 +97,25 @@ export default function LandingPage() {
         <span className="flex flex-col  w-[2px] h-[15px] bg-white"></span>
         <span className={mainLight >= 10 && mainLight < 30 ? "text-[#9EDE52]" : ""}>02</span>
         <span className="flex flex-col  w-[2px] h-[15px] bg-white"></span>
-        <span className={mainLight >= 30 && mainLight < 50 ? "text-[#9EDE52]" : ""}>03</span>
+        <span className={`
+        ${window.innerWidth <= 430
+          ? mainLight >= 30 && mainLight < 60
+            ? "text-[#9EDE52]"
+            : ""
+          : mainLight >=30 && mainLight < 50
+          ? "text-[#9EDE52]"
+          : ""}
+      `}>03</span>
         <span className="flex flex-col  w-[2px] h-[15px] bg-white"></span>
-        <span className={mainLight >= 50 && mainLight < 88 ? "text-[#9EDE52]" : ""}>04</span>
+        <span className={`
+        ${window.innerWidth <= 430
+          ? mainLight >= 60 && mainLight < 88
+            ? "text-[#9EDE52]"
+            : ""
+          : mainLight >=50 && mainLight < 88
+          ? "text-[#9EDE52]"
+          : ""}
+      `}>04</span>
         <span className="flex flex-col  w-[2px] h-[15px] bg-white"></span>
         <span className={mainLight >= 88 && mainLight < 110 ? "text-[#9EDE52]" : ""}>05</span>
       </div>

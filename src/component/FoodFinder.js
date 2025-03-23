@@ -19,7 +19,7 @@ export default function FoodFinder() {
         backgroundAttachment: "fixed",
       }}
     >
-      <div className="px-16 pt-12">
+      <div className="px-16 pt-12 max-[430px]:px-6">
     
         <div className="w-full flex justify-between items-center ">
           <div

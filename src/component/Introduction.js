@@ -12,9 +12,11 @@ export default function Introduction(colorRef) {
 
   useEffect(() => {
     const handleScroll = () => {
+    
 
       if (sessionStorage.getItem("cameFromFoodFinder")) return;
 
+      
       if (targetRef.current) {
         const rect = targetRef.current.getBoundingClientRect();
         const currentScrollY = window.scrollY;
@@ -72,17 +74,17 @@ export default function Introduction(colorRef) {
         backgroundImage: "url('/img/우주.png')",
         backgroundSize: "cover", 
         backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed",
+        backgroundAttachment: window.innerWidth <= 430 ? "scroll" : "fixed",
         zIndex: 0,
       }}
     >
-      <div className="ml-[6rem] mt-[7rem] max-[480px]:ml-[2rem] ">
+      <div className="ml-[6rem] mt-[7rem] max-[480px]:ml-[2rem] max-[430px]:mt-[1rem] ">
         <span className="text-[50px] max-[800px]:text-[40px]">
           <span className="mr-[25px] text-[#9EDE52]">01</span>About me
         </span>
       </div>
 
-      <div className="mt-[5rem] ml-[11rem] max-[605px]:ml-[1rem]">
+      <div className="mt-[5rem] ml-[11rem] max-[605px]:ml-[1rem] max-[430px]:mt-[2rem]">
         <span className="text-[25px] max-[394px]:text-[20px]">
           끊임없이 성장하는 프론트-엔드 개발자,
         </span>
@@ -92,7 +94,7 @@ export default function Introduction(colorRef) {
         </span>
       </div>
 
-      <div className="flex items-center ml-[11rem] mt-[5rem] max-[1117px]:ml-[5rem] max-[620px]:ml-[2rem]">
+      <div className="flex items-center ml-[11rem] mt-[5rem] max-[1117px]:ml-[5rem] max-[620px]:ml-[2rem] max-[430px]:mt-[2rem]">
         <div
           className={
             changeScroll
