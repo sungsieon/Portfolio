@@ -23,12 +23,12 @@ export default function Introduction(colorRef) {
           setChangeCount(1);
 
           document.body.style.overflow = "hidden";
-          document.body.style.paddingRight = "12.3px";
+         
           hasPaused.current = true;
       
           setTimeout(() => {
             document.body.style.overflow = "auto";
-            document.body.style.paddingRight = "0px";
+          
           }, 1500);
         }
         if (
@@ -38,11 +38,11 @@ export default function Introduction(colorRef) {
         ) {
           setChangeScroll(true);
           document.body.style.overflow = "hidden";
-          document.body.style.paddingRight = "12.3px";
+         
 
           setTimeout(() => {
             document.body.style.overflow = "auto";
-            document.body.style.paddingRight = "0px";
+         
           }, 1500);
           hasPaused.current = false;
         }
