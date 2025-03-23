@@ -56,6 +56,7 @@ export default function LandingPage() {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundAttachment: window.innerWidth <= 430 ? "scroll" : "fixed",
+        height: "100dvh",
       }}
     >
       <div className="fixed top-[5%] right-[2%]">

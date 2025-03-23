@@ -10,6 +10,7 @@ export default function Contact() {
         backgroundRepeat: "no-repeat",
         backgroundAttachment: window.innerWidth <= 430 ? "scroll" : "fixed",
         zIndex: 0,
+        height: "100dvh",
       }}
     >
       <div className="ml-[6rem] mt-[3rem] max-[480px]:ml-[2rem]">
