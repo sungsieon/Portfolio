@@ -65,7 +65,7 @@ export default function Introduction(colorRef) {
         backgroundRepeat: "no-repeat",
         backgroundAttachment: window.innerWidth <= 430 ? "scroll" : "fixed",
         zIndex: 0,
-        height: "100dvh",
+        minHeight: "100vh",
       }}
     >
       <div className="ml-[6rem] mt-[7rem] max-[480px]:ml-[2rem] max-[430px]:mt-[1rem] ">
