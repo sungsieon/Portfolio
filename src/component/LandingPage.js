@@ -59,7 +59,7 @@ export default function LandingPage() {
   return (
     // --------우주 배경---------
     <div 
-      className="relative  min-h-screen bg-cover z-20  "
+      className="relative  min-h-screen overflow-hidden bg-cover z-20  "
       style={{
         backgroundImage: "url('/img/우주.png')",
         backgroundSize: "cover",

@@ -34,7 +34,7 @@ export default function Project() {
 
   return (
     <div
-      className="relative w-full min-h-full bg-cover z-20 overflow-x-hidden "
+      className="relative w-full min-h-full bg-cover z-20 overflow-hidden "
       style={{
         backgroundImage: "url('/img/우주.png')",
         backgroundSize: "cover",
