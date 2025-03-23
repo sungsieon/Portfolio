@@ -23,6 +23,9 @@ export default function Introduction(colorRef) {
           setChangeCount(1);
 
           document.body.style.overflow = "hidden";
+
+          window.scrollTo({ top: currentScrollY, behavior: "instant" });
+
          
           hasPaused.current = true;
       
@@ -38,6 +41,9 @@ export default function Introduction(colorRef) {
         ) {
           setChangeScroll(true);
           document.body.style.overflow = "hidden";
+
+          window.scrollTo({ top: currentScrollY, behavior: "instant" });
+
          
 
           setTimeout(() => {
