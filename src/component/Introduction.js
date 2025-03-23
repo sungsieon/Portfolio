@@ -83,12 +83,12 @@ export default function Introduction(colorRef) {
       </div>
 
       <div className="mt-[5rem] ml-[11rem] max-[605px]:ml-[1rem]">
-        <span className="text-[25px]">
+        <span className="text-[25px] max-[394px]:text-[20px]">
           끊임없이 성장하는 프론트-엔드 개발자,
         </span>
         <br></br>
-        <span className="leading-[1.2] ml-[5px] text-[70px] max-[465px]:text-[50px]">
-          <span className="text-[#9EDE52]">성시언</span>입니다.
+        <span className="leading-[1.2] ml-[5px] text-[70px] max-[465px]:text-[50px] max-[394px]:text-[35px] max-[394px]:ml-0">
+          <span className="text-[#9EDE52] ">성시언</span>입니다.
         </span>
       </div>
 
@@ -111,22 +111,22 @@ export default function Introduction(colorRef) {
 
       <div
         ref={targetRef}
-        className="flex z-20 w-full mt-[1.5rem] ml-[10rem] max-[1117px]:ml-[5rem] max-[620px]:ml-[2rem] "
+        className="flex z-20 w-full mt-[1.5rem] ml-[10rem] max-[1117px]:ml-[5rem] max-[620px]:ml-[1.5rem] "
       >
         <div
           className={`${changeScroll ? "" : "animate-move-left-opacity"}
           ${changeCount && changeScroll ? "animate-move-right-opacity" : ""}`}
         >
           <div className="flex items-center">
-            <img className="w-14 h-14 object-contain " src="/img/rocket.png" />
-            <p className="text-[42px] ml-[1.4rem] z-20 max-[440px]:text-[30px]">
+            <img className="w-14 h-14 object-contain max-[400px]:hidden" src="/img/rocket.png" />
+            <p className="text-[42px] ml-[1.4rem] z-20 max-[440px]:text-[30px] max-[400px]:ml-0">
               끊임없는 도전과 학습
             </p>
           </div>
           <div>
             <p
               className={
-                "regular-font text-[25px] z-20 ml-[5rem] mt-[1rem] w-[74vw] max-[440px]:text-[13px]"
+                "regular-font text-[25px] z-20 ml-[5rem] mt-[1rem] w-[74vw] max-[440px]:text-[13px] max-[430px]:ml-0"
               }
             >
               진로를 방황하던 중 웹 개발을 접하게 되었습니다.<br></br>
@@ -152,23 +152,23 @@ export default function Introduction(colorRef) {
         ${changeScroll && changeCount ? "animate-move-right-opacity2" : ""} `}
         >
           <div className={`flex items-center`}>
-            <img className="w-14 h-14 object-contain " src="/img/rocket.png" />
-            <p className="text-[42px] ml-[1.4rem] z-10 max-[440px]:text-[30px]">
+            <img className="w-14 h-14 object-contain max-[400px]:hidden" src="/img/rocket.png" />
+            <p className="text-[42px] ml-[1.4rem] z-10 max-[440px]:text-[30px] max-[400px]:ml-[3rem]">
               세심하고 효율적인 코드
             </p>
           </div>
 
           <div>
-            <p className="regular-font text-[25px]  ml-[5rem] mt-[1rem] w-[74rem] max-[440px]:text-[13px]">
+            <p className="regular-font text-[25px]  ml-[5rem] mt-[1rem] w-[74rem] max-[440px]:text-[13px] max-[400px]:ml-[3rem] ">
               웹 개발에 있어 무엇보다 중요한 점은 사용자의 편의라고 생각합니다.{" "}
               <br></br>
-              저는 사용자의 편의를 위해 인터페이스 디자인과 디테일을 중요시
+              저는 사용자의 편의를 위해 인터페이스 디자인과 디테일을 중요시<br className="hidden max-[430px]:block" />
               여기고 있습니다. <br></br>
               <br></br>
-              코드를 간결하고 효율적으로 작성하며 사용에 있어 불편한 요소를
-              최소화 하기 위해<br></br> 항상 노력하고 있습니다.<br></br>
+              코드를 간결하고 효율적으로 작성하며 사용에 있어 불편한 요소를<br className="hidden max-[430px]:block" />
+              최소화 하기 위해<br className="max-[430px]:hidden"/> 항상 노력하고 있습니다.<br></br>
               <br></br>
-              노력을 바탕으로 언제나 사용자의 입장에서 생각하며 최적의 결과물을
+              노력을 바탕으로 언제나 사용자의 입장에서 생각하며 최적의<br className="hidden max-[430px]:block" /> 결과물을
               만들어내고자 합니다.
             </p>
           </div>
