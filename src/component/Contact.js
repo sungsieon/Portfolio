@@ -6,8 +6,8 @@ export default function Contact() {
       className={`relative w-full min-h-screen bg-cover overflow-hidden z-20`}
       style={{
         backgroundImage: "url('/img/우주.png')",
-        backgroundSize: "cover", 
-        backgroundRepeat: "no-repeat", 
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
         backgroundAttachment: window.innerWidth <= 430 ? "scroll" : "fixed",
         zIndex: 0,
       }}

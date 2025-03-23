@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 
-
 export default function Introduction(colorRef) {
   const [scrollTranslate, setScrollTranslate] = useState(true);
   const [changeScroll, setChangeScroll] = useState(true);
@@ -8,15 +7,11 @@ export default function Introduction(colorRef) {
   const prevScrollY = useRef(window.scrollY);
   const hasPaused = useRef(false);
   const targetRef = useRef(null);
-  
 
   useEffect(() => {
     const handleScroll = () => {
-    
-
       if (sessionStorage.getItem("cameFromFoodFinder")) return;
 
-      
       if (targetRef.current) {
         const rect = targetRef.current.getBoundingClientRect();
         const currentScrollY = window.scrollY;
@@ -28,12 +23,10 @@ export default function Introduction(colorRef) {
 
           window.scrollTo({ top: currentScrollY, behavior: "instant" });
 
-         
           hasPaused.current = true;
-      
+
           setTimeout(() => {
             document.body.style.overflow = "auto";
-          
           }, 1500);
         }
         if (
@@ -46,11 +39,8 @@ export default function Introduction(colorRef) {
 
           window.scrollTo({ top: currentScrollY, behavior: "instant" });
 
-         
-
           setTimeout(() => {
             document.body.style.overflow = "auto";
-         
           }, 1500);
           hasPaused.current = false;
         }
@@ -68,11 +58,10 @@ export default function Introduction(colorRef) {
 
   return (
     <div
-      
       className={`relative w-full min-h-screen bg-cover overflow-hidden z-20`}
       style={{
         backgroundImage: "url('/img/우주.png')",
-        backgroundSize: "cover", 
+        backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundAttachment: window.innerWidth <= 430 ? "scroll" : "fixed",
         zIndex: 0,
@@ -120,7 +109,10 @@ export default function Introduction(colorRef) {
           ${changeCount && changeScroll ? "animate-move-right-opacity" : ""}`}
         >
           <div className="flex items-center">
-            <img className="w-14 h-14 object-contain max-[400px]:hidden" src="/img/rocket.png" />
+            <img
+              className="w-14 h-14 object-contain max-[400px]:hidden"
+              src="/img/rocket.png"
+            />
             <p className="text-[42px] ml-[1.4rem] z-20 max-[440px]:text-[30px] max-[400px]:ml-0">
               끊임없는 도전과 학습
             </p>
@@ -154,7 +146,10 @@ export default function Introduction(colorRef) {
         ${changeScroll && changeCount ? "animate-move-right-opacity2" : ""} `}
         >
           <div className={`flex items-center`}>
-            <img className="w-14 h-14 object-contain max-[400px]:hidden" src="/img/rocket.png" />
+            <img
+              className="w-14 h-14 object-contain max-[400px]:hidden"
+              src="/img/rocket.png"
+            />
             <p className="text-[42px] ml-[1.4rem] z-10 max-[440px]:text-[30px] max-[400px]:ml-[3rem]">
               세심하고 효율적인 코드
             </p>
@@ -164,14 +159,19 @@ export default function Introduction(colorRef) {
             <p className="regular-font text-[25px]  ml-[5rem] mt-[1rem] w-[74rem] max-[440px]:text-[13px] max-[400px]:ml-[3rem] ">
               웹 개발에 있어 무엇보다 중요한 점은 사용자의 편의라고 생각합니다.{" "}
               <br></br>
-              저는 사용자의 편의를 위해 인터페이스 디자인과 디테일을 중요시<br className="hidden max-[430px]:block" />
+              저는 사용자의 편의를 위해 인터페이스 디자인과 디테일을 중요시
+              <br className="hidden max-[430px]:block" />
               여기고 있습니다. <br></br>
               <br></br>
-              코드를 간결하고 효율적으로 작성하며 사용에 있어 불편한 요소를<br className="hidden max-[430px]:block" />
-              최소화 하기 위해<br className="max-[430px]:hidden"/> 항상 노력하고 있습니다.<br></br>
+              코드를 간결하고 효율적으로 작성하며 사용에 있어 불편한 요소를
+              <br className="hidden max-[430px]:block" />
+              최소화 하기 위해
+              <br className="max-[430px]:hidden" /> 항상 노력하고 있습니다.
               <br></br>
-              노력을 바탕으로 언제나 사용자의 입장에서 생각하며 최적의<br className="hidden max-[430px]:block" /> 결과물을
-              만들어내고자 합니다.
+              <br></br>
+              노력을 바탕으로 언제나 사용자의 입장에서 생각하며 최적의
+              <br className="hidden max-[430px]:block" /> 결과물을 만들어내고자
+              합니다.
             </p>
           </div>
         </div>
@@ -184,6 +184,5 @@ export default function Introduction(colorRef) {
         />
       </div>
     </div>
-    
   );
 }

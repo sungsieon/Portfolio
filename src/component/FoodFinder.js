@@ -6,7 +6,7 @@ export default function FoodFinder() {
   };
 
   useEffect(() => {
-    window.scrollTo(0, 0); 
+    window.scrollTo(0, 0);
   }, []);
 
   return (
@@ -14,13 +14,12 @@ export default function FoodFinder() {
       className={`relative w-full min-h-screen bg-cover overflow-hidden z-20`}
       style={{
         backgroundImage: "url('/img/우주.png')",
-        backgroundSize: "cover", 
-        backgroundRepeat: "no-repeat", 
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
       }}
     >
       <div className="px-16 pt-12 max-[430px]:px-6">
-    
         <div className="w-full flex justify-between items-center ">
           <div
             onClick={goHome}

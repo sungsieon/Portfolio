@@ -3,16 +3,13 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export default function Project() {
- 
   useEffect(() => {
-    
     const savedScrollPosition = sessionStorage.getItem("scrollPosition");
     if (savedScrollPosition !== null) {
-        window.scrollTo(0, parseInt(savedScrollPosition, 10));
-        sessionStorage.removeItem("scrollPosition"); 
+      window.scrollTo(0, parseInt(savedScrollPosition, 10));
+      sessionStorage.removeItem("scrollPosition");
     }
-}, []);
-
+  }, []);
 
   const navigate = useNavigate();
 
@@ -52,7 +49,14 @@ export default function Project() {
       </div>
 
       <div className="flex mt-[4vw] max-[854px]:mt-[15vw] max-[462px]:mt-[25vw] h-full">
-        <div onClick={() => {if(window.innerWidth <= 430){goToFoodFinder()} }} className="ml-[10vw] w-[40vw] min-w-[20rem] border-8 border-[#9EDE52] rounded-[6px] overflow-hidden  ">
+        <div
+          onClick={() => {
+            if (window.innerWidth <= 430) {
+              goToFoodFinder();
+            }
+          }}
+          className="ml-[10vw] w-[40vw] min-w-[20rem] border-8 border-[#9EDE52] rounded-[6px] overflow-hidden  "
+        >
           <img
             className="w-full  grayscale hover:grayscale-0 rounded-[1px] outline outline-2 outline-black  "
             src="/img/foodFinder.png"
@@ -93,7 +97,14 @@ export default function Project() {
           </p>
         </div>
 
-        <div onClick={() => {if(window.innerWidth <= 430){goToPokedex()} }} className="mt-[11vw] w-[40vw] min-w-[20rem] border-8 border-[#9EDE52] rounded-[6px] overflow-hidden max-[854px]:ml-[10vw]">
+        <div
+          onClick={() => {
+            if (window.innerWidth <= 430) {
+              goToPokedex();
+            }
+          }}
+          className="mt-[11vw] w-[40vw] min-w-[20rem] border-8 border-[#9EDE52] rounded-[6px] overflow-hidden max-[854px]:ml-[10vw]"
+        >
           <img
             className="w-full grayscale hover:grayscale-0 rounded-[1px] outline outline-2 outline-black"
             src="/img/pokedex.png"
@@ -108,7 +119,14 @@ export default function Project() {
       </span>
 
       <div className="flex mt-[10vw] max-[854px]:mt-[10vw] max-[462px]:mt-[10vw] h-full">
-        <div onClick={() => {if(window.innerWidth <= 430){goToWebPortfolio()} }} className="ml-[10vw] w-[40vw] min-w-[20rem] border-8 border-[#9EDE52] rounded-[6px] overflow-hidden  ">
+        <div
+          onClick={() => {
+            if (window.innerWidth <= 430) {
+              goToWebPortfolio();
+            }
+          }}
+          className="ml-[10vw] w-[40vw] min-w-[20rem] border-8 border-[#9EDE52] rounded-[6px] overflow-hidden  "
+        >
           <img
             className="w-full  grayscale hover:grayscale-0 rounded-[1px] outline outline-2 outline-black  "
             src="/img/PP.png"

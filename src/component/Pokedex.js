@@ -2,12 +2,11 @@ import { useState, useEffect, useRef } from "react";
 
 export default function Pokedex() {
   const goHome = () => {
-    
     window.history.back();
   };
 
   useEffect(() => {
-    window.scrollTo(0, 0); 
+    window.scrollTo(0, 0);
   }, []);
 
   return (
@@ -16,8 +15,8 @@ export default function Pokedex() {
         className={`relative w-full min-h-screen bg-cover overflow-hidden z-20`}
         style={{
           backgroundImage: "url('/img/우주.png')",
-          backgroundSize: "cover", 
-          backgroundRepeat: "no-repeat", 
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
           backgroundAttachment: "fixed",
         }}
       >

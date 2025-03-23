@@ -2,12 +2,11 @@ import { useState, useEffect, useRef } from "react";
 
 export default function WebPortfolio() {
   const goHome = () => {
-    
     window.history.back();
   };
 
   useEffect(() => {
-    window.scrollTo(0, 0); 
+    window.scrollTo(0, 0);
   }, []);
 
   return (
