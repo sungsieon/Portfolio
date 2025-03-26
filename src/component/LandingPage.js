@@ -34,7 +34,6 @@ export default function LandingPage() {
 
       setMainLight(scrollPercent);
 
-      console.log("현재 스크롤 위치:", scrollPercent);
     };
 
     window.addEventListener("scroll", handleScroll2);

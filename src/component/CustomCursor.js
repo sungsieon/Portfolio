@@ -22,14 +22,14 @@ return(
 
 
 <>
-<div className="fixed w-[40px] h-[40px] bg-[#F3FB15] border-[2px] border-[#6a942e] rounded-full pointer-events-none transition-transform duration-100 z-50"
+<div className="fixed w-[40px] h-[40px] bg-[#F3FB15] border-[2px] border-[#6a942e] rounded-full pointer-events-none transition-transform duration-100 z-50 max-[500px]:hidden"
 style={{
     top: `${position.y - 10}px`, // 마우스 위치에서 10px씩 빼기 (커서 크기)
     left: `${position.x - 10}px`, // 마우스 위치에서 10px씩 빼기
   }}></div>
 
 <div
-          className="fixed w-5 h-5 bg-transparent pointer-events-none z-40"
+          className="fixed w-5 h-5 bg-transparent pointer-events-none z-40 max-[500px]:hidden"
           style={{
             top: `${shadowPosition.y - 10}px`,
             left: `${shadowPosition.x - 10}px`,
