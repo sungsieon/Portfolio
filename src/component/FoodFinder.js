@@ -23,14 +23,14 @@ export default function FoodFinder() {
         <div className="w-full flex justify-between items-center ">
           <div
             onClick={goHome}
-            className="w-[3rem] fill-[#9EDE52] cursor-pointer"
+            className="w-[3rem] fill-[#9EDE52]"
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
               <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
             </svg>
           </div>
-          <a href="https://github.com/sungsieon">
-            <div className="border-2 rounded-[20px] border-[#9EDE52] p-2 cursor-pointer hover:bg-white">
+          <a style={{cursor:"none"}} href="https://github.com/sungsieon">
+            <div className="border-2 rounded-[20px] border-[#9EDE52] p-2 hover:bg-white">
               <span className="text-[#9EDE52]">GitHub</span>
             </div>
           </a>
@@ -87,7 +87,7 @@ export default function FoodFinder() {
               깃허브 :{" "}
               <span className="ml-[3.3rem]">
                 <a href="https://github.com/sungsieon/FoodFinder">
-                  <span className="text-[1rem] border-1 p-[5px] rounded-[6px] bg-green-700 cursor-pointer">
+                  <span style={{cursor:"none"}} className="text-[1rem] border-1 p-[5px] rounded-[6px] bg-green-700 cursor-pointer">
                     깃허브 URL
                   </span>
                 </a>
@@ -97,7 +97,7 @@ export default function FoodFinder() {
               URL :{" "}
               <span className="ml-[4.4rem]">
                 <a href="https://sungsieon.github.io/FoodFinder/">
-                  <span className="text-[1rem] border-1 p-[5px] rounded-[6px] bg-green-700 cursor-pointer">
+                  <span style={{cursor:"none"}} className="text-[1rem] border-1 p-[5px] rounded-[6px] bg-green-700 cursor-pointer">
                     배포 URL
                   </span>
                 </a>

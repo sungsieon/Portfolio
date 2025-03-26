@@ -79,7 +79,7 @@ export default function Project() {
 
       <span
         onClick={goToFoodFinder}
-        className="absolute top-[29vw] left-[51.6vw] max-[1070px]:hidden text-[#9EDE52] border-2 border-[#9EDE52] p-1 rounded-[15px] cursor-pointer "
+        className="absolute top-[29vw] left-[51.6vw] max-[1070px]:hidden text-[#9EDE52] border-2 border-[#9EDE52] p-1 rounded-[15px] "
       >
         상세내용
       </span>
@@ -114,7 +114,7 @@ export default function Project() {
       </div>
       <span
         onClick={goToPokedex}
-        className="absolute top-[62.5vw] left-[45.3vw] max-[1070px]:hidden text-[#9EDE52] border-2 border-[#9EDE52] p-1 rounded-[15px] cursor-pointer "
+        className="absolute top-[62.5vw] left-[45.3vw] max-[1070px]:hidden text-[#9EDE52] border-2 border-[#9EDE52] p-1 rounded-[15px]  "
       >
         상세내용
       </span>
@@ -149,7 +149,7 @@ export default function Project() {
 
       <span
         onClick={goToWebPortfolio}
-        className="absolute top-[93vw] left-[51.6vw] max-[1070px]:hidden text-[#9EDE52] border-2 border-[#9EDE52] p-1 rounded-[15px] cursor-pointer "
+        className="absolute top-[93vw] left-[51.6vw] max-[1070px]:hidden text-[#9EDE52] border-2 border-[#9EDE52] p-1 rounded-[15px] "
       >
         상세내용
       </span>

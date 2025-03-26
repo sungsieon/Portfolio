@@ -8,6 +8,7 @@ import Contact from "./component/Contact";
 import FoodFinder from "./component/FoodFinder";
 import Pokedex from "./component/Pokedex";
 import WebPortfolio from "./component/WebPortfolio";
+import CustomCursor from "./component/CustomCursor";
 import {
   BrowserRouter as Router,
   Routes,
@@ -17,12 +18,14 @@ import {
 
 
 
+
 function App() {
 
 
 
   return (
     <Router>
+      <CustomCursor />
       <Routes>
        
         <Route
