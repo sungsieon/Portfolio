@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 
-export default function Introduction(colorRef) {
+
+export default function Introduction() {
   const [scrollTranslate, setScrollTranslate] = useState(true);
   const [changeScroll, setChangeScroll] = useState(true);
   const [changeCount, setChangeCount] = useState(0);
@@ -8,9 +10,14 @@ export default function Introduction(colorRef) {
   const hasPaused = useRef(false);
   const targetRef = useRef(null);
 
+
   useEffect(() => {
+  
+
     const handleScroll = () => {
       if (sessionStorage.getItem("cameFromFoodFinder")) return;
+
+      if (!targetRef.current) return;
 
       if (targetRef.current) {
         const rect = targetRef.current.getBoundingClientRect();
@@ -20,6 +27,7 @@ export default function Introduction(colorRef) {
           setChangeCount(1);
 
           document.body.style.overflow = "hidden";
+
 
           window.scrollTo({ top: currentScrollY, behavior: "instant" });
 
@@ -48,6 +56,9 @@ export default function Introduction(colorRef) {
       }
     };
 
+
+
+
     window.addEventListener("scroll", handleScroll);
     handleScroll();
 
@@ -55,6 +66,10 @@ export default function Introduction(colorRef) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [changeScroll]);
+
+ 
+    
+  
 
   return (
     <div

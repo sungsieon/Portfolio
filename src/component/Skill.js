@@ -66,7 +66,7 @@ export default function Skill() {
               className="w-24 h-24 max-[763px]:w-[3rem]"
             />
             <span className="text-[3rem] max-[934px]:text-[2rem] m-4">
-              TypeScript
+              TypeScript<br></br><span className="text-[2rem] max-[934px]:text-[1rem]">(기본 개념 이해, 학습 중)</span>
             </span>
           </div>
           <div className="flex items-center">
