@@ -1,35 +1,30 @@
-import Introduction from "./Introduction";
 import { useState, useEffect, useRef } from "react";
 
 export default function LandingPage() {
-  const [isTriangle, setIsTriangle] = useState(false);
-  const [starTimer, setStarTimer] = useState(true);
-  const [mainText, setMainText] = useState(false);
-  const [mainLight, setMainLight] = useState(0);
+  const [isTriangle, setIsTriangle] = useState<boolean>(false);
+  const [starTimer, setStarTimer] = useState<boolean>(true);
+  const [mainText, setMainText] = useState<boolean>(false);
+  const [mainLight, setMainLight] = useState<number>(0);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const timer = setTimeout((): void => {
       setIsTriangle(true);
     }, 2200);
 
-    const portfolioText = setTimeout(() => {
+    const portfolioText = setTimeout((): void => {
       setMainText(true);
     }, 3200);
 
-    const timer2 = setTimeout(() => {
+    const timer2 = setTimeout(():void => {
       setStarTimer(false);
     }, 3400);
 
-    const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setIsTriangle(false);
-      }
-    };
+   
 
-    const handleScroll2 = () => {
+    const handleScroll2 = ():void => {
       const scrollTop = window.scrollY;
       const docHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
+      document.documentElement.scrollHeight - window.innerHeight;
       const scrollPercent = (scrollTop / docHeight) * 100;
 
       setMainLight(scrollPercent);
@@ -38,13 +33,16 @@ export default function LandingPage() {
 
     window.addEventListener("scroll", handleScroll2);
 
-    return () => {
+    return ():void => {
       clearTimeout(timer);
       clearTimeout(timer2);
       clearTimeout(portfolioText);
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScroll2);
     };
   }, []);
+
+  const getActiveClass = (min: number, max: number) =>
+    mainLight >= min && mainLight < max ? "text-[#9EDE52]" : "";
 
   return (
     // --------우주 배경---------
@@ -64,14 +62,14 @@ export default function LandingPage() {
           <div className="flex gap-[20.7px] items-end flex-col">
             <span
               className={
-                mainLight >= 0 && mainLight < 10 ? "text-[#9EDE52]" : ""
+                getActiveClass(0,10)
               }
             >
               Main
             </span>
             <span
               className={
-                mainLight >= 10 && mainLight < 30 ? "text-[#9EDE52]" : ""
+                getActiveClass(10,30)
               }
             >
               About
@@ -80,12 +78,8 @@ export default function LandingPage() {
               className={`
         ${
           window.innerWidth <= 430
-            ? mainLight >= 30 && mainLight < 60
-              ? "text-[#9EDE52]"
-              : ""
-            : mainLight >= 30 && mainLight < 50
-            ? "text-[#9EDE52]"
-            : ""
+            ? getActiveClass(30,60)
+            : getActiveClass(30,50)
         }
       `}
             >
@@ -95,12 +89,8 @@ export default function LandingPage() {
               className={`
         ${
           window.innerWidth <= 430
-            ? mainLight >= 60 && mainLight < 88
-              ? "text-[#9EDE52]"
-              : ""
-            : mainLight >= 50 && mainLight < 88
-            ? "text-[#9EDE52]"
-            : ""
+            ? getActiveClass(60,88)
+            : getActiveClass(50,88)
         }
       `}
             >
@@ -108,7 +98,7 @@ export default function LandingPage() {
             </span>
             <span
               className={
-                mainLight >= 88 && mainLight < 110 ? "text-[#9EDE52]" : ""
+                getActiveClass(88,110)
               }
             >
               Contact
@@ -117,7 +107,7 @@ export default function LandingPage() {
           <div className="flex gap-[3px] flex-col items-center">
             <span
               className={
-                mainLight >= 0 && mainLight < 10 ? "text-[#9EDE52]" : ""
+                getActiveClass(0,10)
               }
             >
               01
@@ -125,7 +115,7 @@ export default function LandingPage() {
             <span className="flex flex-col  w-[2px] h-[15px] bg-white"></span>
             <span
               className={
-                mainLight >= 10 && mainLight < 30 ? "text-[#9EDE52]" : ""
+                getActiveClass(10,30)
               }
             >
               02
@@ -135,12 +125,8 @@ export default function LandingPage() {
               className={`
         ${
           window.innerWidth <= 430
-            ? mainLight >= 30 && mainLight < 60
-              ? "text-[#9EDE52]"
-              : ""
-            : mainLight >= 30 && mainLight < 50
-            ? "text-[#9EDE52]"
-            : ""
+            ? getActiveClass(30,60)
+            : getActiveClass(30,50)
         }
       `}
             >
@@ -151,12 +137,8 @@ export default function LandingPage() {
               className={`
         ${
           window.innerWidth <= 430
-            ? mainLight >= 60 && mainLight < 88
-              ? "text-[#9EDE52]"
-              : ""
-            : mainLight >= 50 && mainLight < 88
-            ? "text-[#9EDE52]"
-            : ""
+            ? getActiveClass(60,88)
+            : getActiveClass(50,88)
         }
       `}
             >
@@ -165,7 +147,7 @@ export default function LandingPage() {
             <span className="flex flex-col  w-[2px] h-[15px] bg-white"></span>
             <span
               className={
-                mainLight >= 88 && mainLight < 110 ? "text-[#9EDE52]" : ""
+                getActiveClass(88,110)
               }
             >
               05

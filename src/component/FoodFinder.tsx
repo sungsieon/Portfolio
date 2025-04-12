@@ -35,7 +35,7 @@ export default function FoodFinder() {
             </div>
           </a>
         </div>
-        <h1 className="mt-[2.5rem] text-[40px] text-[#9EDE52]">FoodFinder</h1>
+        <p className="mt-[2.5rem] text-[40px] text-[#9EDE52]">FoodFinder</p>
         <div className="mt-[3rem] w-full h-auto bg-black  shadow-xl shadow-[#6a942e]">
           <div className="p-8 text-[1.4rem] max-[1173px]:text-[1.3rem] max-[973px]:text-[1.1rem] leading-[3rem]">
             <p>
@@ -65,9 +65,9 @@ export default function FoodFinder() {
             </p>
           </div>
         </div>
-        <h1 className="mt-[5rem] text-[40px] text-[#9EDE52]">
+        <p className="mt-[5rem] text-[40px] text-[#9EDE52]">
           프로젝트 세부 정보
-        </h1>
+        </p>
         <div className="mt-[2rem] w-full h-auto bg-black  shadow-xl shadow-[#6a942e]">
           <div className="p-8 text-[1.4rem] max-[1173px]:text-[1.3rem] max-[973px]:text-[1.1rem] leading-[3rem]">
             <p>
@@ -105,7 +105,7 @@ export default function FoodFinder() {
             </p>
           </div>
         </div>
-        <h1 className="mt-[5rem] text-[40px] text-[#9EDE52]">트러블슈팅</h1>
+        <p className="mt-[5rem] text-[40px] text-[#9EDE52]">트러블슈팅</p>
         <div className="mt-[2rem] w-full h-auto bg-black  shadow-xl shadow-[#6a942e]">
           <div className="p-8 text-[1.4rem] max-[1173px]:text-[1.3rem] max-[973px]:text-[1.1rem] leading-[3rem]">
             <p>가게별로 예약일을 저장해야 했는데, 처음에는 모든 예약일을 </p>

@@ -3,18 +3,20 @@ import { useLocation } from "react-router-dom";
 
 
 export default function Introduction() {
-  const [scrollTranslate, setScrollTranslate] = useState(true);
-  const [changeScroll, setChangeScroll] = useState(true);
-  const [changeCount, setChangeCount] = useState(0);
-  const prevScrollY = useRef(window.scrollY);
-  const hasPaused = useRef(false);
-  const targetRef = useRef(null);
+  const [scrollTranslate, setScrollTranslate] = useState<boolean>(true);
+  const [changeScroll, setChangeScroll] = useState<boolean>(true);
+  const [changeCount, setChangeCount] = useState<number>(0);
+  const prevScrollY = useRef<number>(
+    typeof window !== 'undefined' ? window.scrollY : 0
+  );
+  const hasPaused = useRef<boolean>(false);
+  const targetRef = useRef<HTMLDivElement>(null);
 
 
   useEffect(() => {
   
 
-    const handleScroll = () => {
+    const handleScroll = (): void => {
       if (sessionStorage.getItem("cameFromFoodFinder")) return;
 
       if (!targetRef.current) return;
@@ -78,7 +80,8 @@ export default function Introduction() {
         backgroundImage: "url('/img/우주.png')",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        backgroundAttachment: window.innerWidth <= 430 ? "scroll" : "fixed",
+        backgroundAttachment: 
+        typeof window !== "undefined" && window.innerWidth <= 430 ? "scroll" : "fixed",
         zIndex: 0,
         minHeight: "100vh",
       }}
@@ -128,6 +131,7 @@ export default function Introduction() {
             <img
               className="w-14 h-14 object-contain max-[400px]:hidden"
               src="/img/rocket.png"
+              alt="rocket"
             />
             <p className="text-[42px] ml-[1.4rem] z-20 max-[440px]:text-[30px] max-[400px]:ml-0">
               끊임없는 도전과 학습
@@ -165,6 +169,7 @@ export default function Introduction() {
             <img
               className="w-14 h-14 object-contain max-[400px]:hidden"
               src="/img/rocket.png"
+              alt="rocket"
             />
             <p className="text-[42px] ml-[1.4rem] z-10 max-[440px]:text-[30px] max-[400px]:ml-[3rem]">
               세심하고 효율적인 코드
@@ -197,6 +202,7 @@ export default function Introduction() {
         <img
           className="rotate-[8deg] w-[20rem] max-[] h-[35rem] object-contain"
           src="/img/사진 넣을 자리.png"
+          alt="human"
         />
       </div>
     </div>

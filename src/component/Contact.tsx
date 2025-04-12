@@ -8,7 +8,8 @@ export default function Contact() {
         backgroundImage: "url('/img/우주.png')",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        backgroundAttachment: window.innerWidth <= 430 ? "scroll" : "fixed",
+        backgroundAttachment: 
+        typeof window !== "undefined" && window.innerWidth <= 430 ? "scroll" : "fixed",
         zIndex: 0,
         minHeight: "100vh",
       }}

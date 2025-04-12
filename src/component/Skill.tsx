@@ -9,7 +9,8 @@ export default function Skill() {
           backgroundImage: "url('/img/우주.png')",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
-          backgroundAttachment: window.innerWidth <= 430 ? "scroll" : "fixed",
+          backgroundAttachment:
+          typeof window !== "undefined" && window.innerWidth <= 430 ? "scroll" : "fixed",
           zIndex: 0,
           minHeight: "100vh",
         }}
@@ -66,7 +67,7 @@ export default function Skill() {
               className="w-24 h-24 max-[763px]:w-[3rem]"
             />
             <span className="text-[3rem] max-[934px]:text-[2rem] m-4">
-              TypeScript<br></br><span className="text-[2rem] max-[934px]:text-[1rem]">(기본 개념 이해, 학습 중)</span>
+              TypeScript
             </span>
           </div>
           <div className="flex items-center">

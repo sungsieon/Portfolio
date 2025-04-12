@@ -3,31 +3,38 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export default function Project() {
+
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+
   useEffect(() => {
     const savedScrollPosition = sessionStorage.getItem("scrollPosition");
     if (savedScrollPosition !== null) {
       window.scrollTo(0, parseInt(savedScrollPosition, 10));
       sessionStorage.removeItem("scrollPosition");
     }
+
+    if (typeof window !== "undefined") {
+      setIsMobile(window.innerWidth <= 430);
+    }
   }, []);
 
   const navigate = useNavigate();
 
-  const goToFoodFinder = () => {
+  const goToFoodFinder = (): void => {
     navigate("/foodFinder");
-    sessionStorage.setItem("scrollPosition", window.scrollY);
+    sessionStorage.setItem("scrollPosition", window.scrollY.toString());
     sessionStorage.setItem("cameFromFoodFinder", "true");
   };
 
-  const goToPokedex = () => {
+  const goToPokedex = (): void => {
     navigate("/pokedex");
-    sessionStorage.setItem("scrollPosition", window.scrollY);
+    sessionStorage.setItem("scrollPosition", window.scrollY.toString());
     sessionStorage.setItem("cameFromFoodFinder", "true");
   };
 
-  const goToWebPortfolio = () => {
+  const goToWebPortfolio = (): void => {
     navigate("/webPortfolio");
-    sessionStorage.setItem("scrollPosition", window.scrollY);
+    sessionStorage.setItem("scrollPosition", window.scrollY.toString());
     sessionStorage.setItem("cameFromFoodFinder", "true");
   };
 
@@ -38,7 +45,8 @@ export default function Project() {
         backgroundImage: "url('/img/우주.png')",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        backgroundAttachment: window.innerWidth <= 430 ? "scroll" : "fixed",
+        backgroundAttachment:
+        isMobile ? "scroll" : "fixed",
         zIndex: 0,
         minHeight: "100vh",
       }}
@@ -51,8 +59,8 @@ export default function Project() {
 
       <div className="flex mt-[4vw] max-[854px]:mt-[15vw] max-[462px]:mt-[25vw] h-full">
         <div
-          onClick={() => {
-            if (window.innerWidth <= 430) {
+          onClick={(): void => {
+            if (isMobile) {
               goToFoodFinder();
             }
           }}
@@ -99,8 +107,8 @@ export default function Project() {
         </div>
 
         <div
-          onClick={() => {
-            if (window.innerWidth <= 430) {
+          onClick={(): void => {
+            if (isMobile) {
               goToPokedex();
             }
           }}
@@ -121,8 +129,8 @@ export default function Project() {
 
       <div className="flex mt-[10vw] max-[854px]:mt-[10vw] max-[462px]:mt-[10vw] h-full">
         <div
-          onClick={() => {
-            if (window.innerWidth <= 430) {
+          onClick={(): void => {
+            if (isMobile) {
               goToWebPortfolio();
             }
           }}

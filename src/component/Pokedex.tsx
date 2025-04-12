@@ -1,13 +1,18 @@
 import { useState, useEffect, useRef } from "react";
 
 export default function Pokedex() {
-  const goHome = () => {
-    window.history.back();
-  };
 
-  useEffect(() => {
+
+  useEffect((): void => {
     window.scrollTo(0, 0);
   }, []);
+
+  const goHome = ():void => {
+    if(typeof window === "undefined") return;
+      window.history.back();
+  };
+
+  
 
   return (
     <>
@@ -37,7 +42,7 @@ export default function Pokedex() {
               </div>
             </a>
           </div>
-          <h1 className="mt-[2.5rem] text-[40px] text-[#9EDE52]">Pokedex</h1>
+          <p className="mt-[2.5rem] text-[40px] text-[#9EDE52]">Pokedex</p>
           <div className="mt-[3rem] w-full h-auto bg-black  shadow-xl shadow-[#6a942e]">
             <div className="p-8 text-[1.4rem] max-[1173px]:text-[1.3rem] max-[973px]:text-[1.1rem] leading-[3rem]">
               <p>
@@ -71,9 +76,9 @@ export default function Pokedex() {
               </p>
             </div>
           </div>
-          <h1 className="mt-[5rem] text-[40px] text-[#9EDE52]">
+          <p className="mt-[8rem] text-[40px] text-[#9EDE52]">
             프로젝트 세부 정보
-          </h1>
+          </p>
           <div className="mt-[2rem] w-full h-auto bg-black  shadow-xl shadow-[#6a942e]">
             <div className="p-8 text-[1.4rem] max-[1173px]:text-[1.3rem] max-[973px]:text-[1.1rem] leading-[3rem]">
               <p>
@@ -92,7 +97,7 @@ export default function Pokedex() {
                 깃허브 :{" "}
                 <span className="ml-[3.3rem]">
                   <a href="https://github.com/sungsieon/PokeDex">
-                    <span style={{cursor:"none"}} className="text-[1rem] border-1 p-[5px] rounded-[6px] bg-green-700 cursor-pointer">
+                    <span style={{cursor:"none"}} className="text-[1rem] p-[5px] rounded-[6px] bg-green-700 cursor-pointer">
                       깃허브 URL
                     </span>
                   </a>
@@ -102,7 +107,7 @@ export default function Pokedex() {
                 URL :{" "}
                 <span className="ml-[4.4rem]">
                   <a href="https://pokedex-nine-dusky-97.vercel.app/">
-                    <span style={{cursor:"none"}} className="text-[1rem] border-1 p-[5px] rounded-[6px] bg-green-700 cursor-pointer">
+                    <span style={{cursor:"none"}} className="text-[1rem] p-[5px] rounded-[6px] bg-green-700 cursor-pointer">
                       배포 URL
                     </span>
                   </a>
@@ -110,7 +115,7 @@ export default function Pokedex() {
               </p>
             </div>
           </div>
-          <h1 className="mt-[5rem] text-[40px] text-[#9EDE52]">트러블슈팅</h1>
+          <p className="mt-[5rem] text-[40px] text-[#9EDE52]">트러블슈팅</p>
           <div className="mt-[2rem] w-full h-auto bg-black  shadow-xl shadow-[#6a942e]">
             <div className="p-8 text-[1.4rem] max-[1173px]:text-[1.3rem] max-[973px]:text-[1.1rem] leading-[3rem]">
               <p>
