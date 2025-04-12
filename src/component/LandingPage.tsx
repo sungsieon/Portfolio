@@ -22,13 +22,13 @@ export default function LandingPage() {
    
 
     const handleScroll2 = ():void => {
+      if(typeof window !== "undefined"){
       const scrollTop = window.scrollY;
-      const docHeight =
-      document.documentElement.scrollHeight - window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight; 
       const scrollPercent = (scrollTop / docHeight) * 100;
 
       setMainLight(scrollPercent);
-
+      }
     };
 
     window.addEventListener("scroll", handleScroll2);
