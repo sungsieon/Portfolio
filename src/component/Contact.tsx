@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef } from "react";
+import { useScroll } from "../context/ScrollContext";
 
 export default function Contact() {
+  const {contactRef} = useScroll();
+
   return (
     <div
       className={`relative w-full min-h-screen bg-cover overflow-hidden z-20`}
@@ -16,7 +19,7 @@ export default function Contact() {
     >
       <div className="ml-[6rem] mt-[3rem] max-[480px]:ml-[2rem]">
         <h2 className="text-[50px] max-[800px]:text-[30px]">
-          <span className="mr-[25px] text-[#9EDE52]">04</span> Contact
+          <span ref={contactRef} className="mr-[25px] text-[#9EDE52]">04</span> Contact
         </h2>
       </div>
 

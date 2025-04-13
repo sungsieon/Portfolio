@@ -1,10 +1,14 @@
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useScroll } from "../context/ScrollContext";
 
 export default function Project() {
 
   const [isMobile, setIsMobile] = useState<boolean>(false);
+
+  const {projectRef} = useScroll();
+
 
   useEffect(() => {
     const savedScrollPosition = sessionStorage.getItem("scrollPosition");
@@ -53,7 +57,7 @@ export default function Project() {
     >
       <div className="ml-[6rem] mt-[3rem] max-[480px]:ml-[2rem]">
         <h2 className="text-[50px] max-[800px]:text-[40px]">
-          <span className="mr-[25px] text-[#9EDE52]">03</span> Projects
+          <span ref={projectRef} className="mr-[25px] text-[#9EDE52]">03</span> Projects
         </h2>
       </div>
 

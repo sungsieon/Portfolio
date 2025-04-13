@@ -1,10 +1,34 @@
 import { useState, useEffect, useRef } from "react";
+import { useScroll } from "../context/ScrollContext";
 
 export default function LandingPage() {
   const [isTriangle, setIsTriangle] = useState<boolean>(false);
   const [starTimer, setStarTimer] = useState<boolean>(true);
   const [mainText, setMainText] = useState<boolean>(false);
   const [mainLight, setMainLight] = useState<number>(0);
+
+  const {landingRef, introRef, skillRef, projectRef, contactRef } = useScroll();
+
+  const goToLanding = () => {
+    landingRef.current?.scrollIntoView({ behavior: "smooth" });
+  }
+
+  const goToIntro = () => {
+    introRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const goToSkill = () => {
+    skillRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+ 
+  const goToProject = () => {
+    projectRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const goToContact = () => {
+    contactRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
 
   useEffect(() => {
     const timer = setTimeout((): void => {
@@ -61,6 +85,7 @@ export default function LandingPage() {
         <div className="flex gap-[10px]">
           <div className="flex gap-[20.7px] items-end flex-col">
             <span
+              onClick={goToLanding}
               className={
                 getActiveClass(0,10)
               }
@@ -68,6 +93,7 @@ export default function LandingPage() {
               Main
             </span>
             <span
+              onClick={goToIntro}
               className={
                 getActiveClass(10,30)
               }
@@ -75,6 +101,7 @@ export default function LandingPage() {
               About
             </span>
             <span
+              onClick={goToSkill}
               className={`
         ${
           window.innerWidth <= 430
@@ -86,6 +113,7 @@ export default function LandingPage() {
               Skill
             </span>
             <span
+              onClick={goToProject}
               className={`
         ${
           window.innerWidth <= 430
@@ -97,6 +125,7 @@ export default function LandingPage() {
               Project
             </span>
             <span
+              onClick={goToContact}
               className={
                 getActiveClass(88,110)
               }
@@ -106,6 +135,7 @@ export default function LandingPage() {
           </div>
           <div className="flex gap-[3px] flex-col items-center">
             <span
+              onClick={goToLanding}
               className={
                 getActiveClass(0,10)
               }
@@ -114,6 +144,7 @@ export default function LandingPage() {
             </span>
             <span className="flex flex-col  w-[2px] h-[15px] bg-white"></span>
             <span
+              onClick={goToIntro}
               className={
                 getActiveClass(10,30)
               }
@@ -122,6 +153,7 @@ export default function LandingPage() {
             </span>
             <span className="flex flex-col  w-[2px] h-[15px] bg-white"></span>
             <span
+              onClick={goToSkill}
               className={`
         ${
           window.innerWidth <= 430
@@ -134,6 +166,7 @@ export default function LandingPage() {
             </span>
             <span className="flex flex-col  w-[2px] h-[15px] bg-white"></span>
             <span
+              onClick={goToProject}
               className={`
         ${
           window.innerWidth <= 430
@@ -146,6 +179,7 @@ export default function LandingPage() {
             </span>
             <span className="flex flex-col  w-[2px] h-[15px] bg-white"></span>
             <span
+              onClick={goToContact}
               className={
                 getActiveClass(88,110)
               }
@@ -178,7 +212,7 @@ export default function LandingPage() {
         <img className="w-[10vw] object-contain" src="/img/O.png" />
       </div>
 
-      <div className="absolute top-[0%] left-[-34.2%] z-20 w-full h-full ">
+      <div ref={landingRef} className="absolute top-[0%] left-[-34.2%] z-20 w-full h-full ">
         <img
           className="rotate-[40deg] w-[83.5vw] h-[83.5vw] max-w-full max-h-full object-contain animate-move-rotate"
           src="/img/우주2.png"

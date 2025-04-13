@@ -14,6 +14,8 @@ import {
   Route,
   useNavigate,
 } from "react-router-dom";
+import { ScrollProvider } from "./context/ScrollContext";
+
 
 
 
@@ -25,6 +27,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollProvider>
       <CustomCursor />
       <Routes>
        
@@ -46,6 +49,7 @@ function App() {
         <Route path="/pokedex" element={<Pokedex />} />
         <Route path="/webPortfolio" element={<WebPortfolio />} />
       </Routes>
+      </ScrollProvider>
     </Router>
   );
 }

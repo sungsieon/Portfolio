@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
+import { useScroll } from "../context/ScrollContext";
 
 
 export default function Introduction() {
@@ -11,6 +12,7 @@ export default function Introduction() {
   );
   const hasPaused = useRef<boolean>(false);
   const targetRef = useRef<HTMLDivElement>(null);
+  const {introRef} = useScroll(); 
 
 
   useEffect(() => {
@@ -88,7 +90,7 @@ export default function Introduction() {
     >
       <div className="ml-[6rem] mt-[7rem] max-[480px]:ml-[2rem] max-[430px]:mt-[1rem] ">
         <span className="text-[50px] max-[800px]:text-[40px]">
-          <span className="mr-[25px] text-[#9EDE52]">01</span>About me
+          <span ref={introRef} className="mr-[25px] text-[#9EDE52]">01</span>About me
         </span>
       </div>
 

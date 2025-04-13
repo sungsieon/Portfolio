@@ -1,6 +1,10 @@
 import { useState, useEffect, useRef } from "react";
+import { useScroll } from "../context/ScrollContext";
 
 export default function Skill() {
+  const {skillRef} = useScroll();
+  
+
   return (
     <>
       <div
@@ -17,7 +21,7 @@ export default function Skill() {
       >
         <div className="ml-[6rem] mt-[3rem] max-[480px]:ml-[2rem] max-[430px]:mt-[0]">
           <h2 className="text-[50px] max-[800px]:text-[40px]">
-            <span className="mr-[25px] text-[#9EDE52]">02</span> Skills
+            <span ref={skillRef} className="mr-[25px] text-[#9EDE52]">02</span> Skills
           </h2>
         </div>
 

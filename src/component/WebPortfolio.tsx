@@ -85,7 +85,7 @@ export default function WebPortfolio() {
               <p>
                 깃허브 :{" "}
                 <span className="ml-[3.3rem]">
-                  <a href="https://github.com/sungsieon/PokeDex">
+                  <a href="https://github.com/sungsieon/Portfolio">
                     <span
                       style={{ cursor: "none" }}
                       className="text-[1rem] border-1 p-[5px] rounded-[6px] bg-green-700 cursor-pointer"
@@ -98,7 +98,7 @@ export default function WebPortfolio() {
               <p>
                 URL :{" "}
                 <span className="ml-[4.4rem]">
-                  <a href="https://pokedex-nine-dusky-97.vercel.app/">
+                  <a href="https://portfolio-livid-nine-82.vercel.app/">
                     <span
                       style={{ cursor: "none" }}
                       className="text-[1rem] border-1 p-[5px] rounded-[6px] bg-green-700 cursor-pointer"
