@@ -9,26 +9,9 @@ export default function LandingPage() {
 
   const {landingRef, introRef, skillRef, projectRef, contactRef } = useScroll();
 
-  const goToLanding = () => {
-    landingRef.current?.scrollIntoView({ behavior: "smooth" });
+  const scrollTo = (ref: React.RefObject<HTMLDivElement | null>) => {
+    ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   }
-
-  const goToIntro = () => {
-    introRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const goToSkill = () => {
-    skillRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
- 
-  const goToProject = () => {
-    projectRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const goToContact = () => {
-    contactRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
 
   useEffect(() => {
     const timer = setTimeout((): void => {
@@ -85,7 +68,7 @@ export default function LandingPage() {
         <div className="flex gap-[10px]">
           <div className="flex gap-[20.7px] items-end flex-col">
             <span
-              onClick={goToLanding}
+              onClick={() => scrollTo(landingRef)}
               className={
                 getActiveClass(0,10)
               }
@@ -93,7 +76,7 @@ export default function LandingPage() {
               Main
             </span>
             <span
-              onClick={goToIntro}
+              onClick={() => scrollTo(introRef)}
               className={
                 getActiveClass(10,30)
               }
@@ -101,7 +84,7 @@ export default function LandingPage() {
               About
             </span>
             <span
-              onClick={goToSkill}
+              onClick={() => scrollTo(skillRef)}
               className={`
         ${
           window.innerWidth <= 430
@@ -113,7 +96,7 @@ export default function LandingPage() {
               Skill
             </span>
             <span
-              onClick={goToProject}
+              onClick={() => scrollTo(projectRef)}
               className={`
         ${
           window.innerWidth <= 430
@@ -125,7 +108,7 @@ export default function LandingPage() {
               Project
             </span>
             <span
-              onClick={goToContact}
+              onClick={() => scrollTo(contactRef)}
               className={
                 getActiveClass(88,110)
               }
@@ -135,7 +118,7 @@ export default function LandingPage() {
           </div>
           <div className="flex gap-[3px] flex-col items-center">
             <span
-              onClick={goToLanding}
+              onClick={() => scrollTo(landingRef)}
               className={
                 getActiveClass(0,10)
               }
@@ -144,7 +127,7 @@ export default function LandingPage() {
             </span>
             <span className="flex flex-col  w-[2px] h-[15px] bg-white"></span>
             <span
-              onClick={goToIntro}
+              onClick={() => scrollTo(introRef)}
               className={
                 getActiveClass(10,30)
               }
@@ -153,7 +136,7 @@ export default function LandingPage() {
             </span>
             <span className="flex flex-col  w-[2px] h-[15px] bg-white"></span>
             <span
-              onClick={goToSkill}
+              onClick={() => scrollTo(skillRef)}
               className={`
         ${
           window.innerWidth <= 430
@@ -166,7 +149,7 @@ export default function LandingPage() {
             </span>
             <span className="flex flex-col  w-[2px] h-[15px] bg-white"></span>
             <span
-              onClick={goToProject}
+              onClick={() => scrollTo(projectRef)}
               className={`
         ${
           window.innerWidth <= 430
@@ -179,7 +162,7 @@ export default function LandingPage() {
             </span>
             <span className="flex flex-col  w-[2px] h-[15px] bg-white"></span>
             <span
-              onClick={goToContact}
+              onClick={() => scrollTo(contactRef)}
               className={
                 getActiveClass(88,110)
               }
