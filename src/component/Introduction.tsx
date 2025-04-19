@@ -77,7 +77,7 @@ export default function Introduction() {
 
   return (
     <div
-      className={`relative w-full min-h-screen bg-cover overflow-hidden z-20`}
+      className={`relative w-full bg-cover overflow-hidden z-20`}
       style={{
         backgroundImage: "url('/img/우주.png')",
         backgroundSize: "cover",
@@ -104,7 +104,7 @@ export default function Introduction() {
         </span>
       </div>
 
-      <div className="flex items-center ml-[11rem] mt-[5rem] max-[1117px]:ml-[5rem] max-[620px]:ml-[2rem] max-[430px]:mt-[2rem]">
+      <div className="flex items-center ml-[11rem] mt-[5rem] max-[1117px]:ml-[5rem] max-[620px]:ml-[2rem] max-[700px]:mt-[2rem] ">
         <div
           className={
             changeScroll
@@ -121,9 +121,9 @@ export default function Introduction() {
         />
       </div>
 
-      <div
+      <div 
         ref={targetRef}
-        className="flex z-20 w-full mt-[1.5rem] ml-[10rem] max-[1117px]:ml-[5rem] max-[620px]:ml-[1.5rem] "
+        className="flex z-20  mt-[1.5rem] ml-[11rem] max-[1117px]:ml-[5rem] max-[620px]:ml-[1.5rem] "
       >
         <div
           className={`${changeScroll ? "" : "animate-move-left-opacity"}
@@ -131,18 +131,18 @@ export default function Introduction() {
         >
           <div className="flex items-center">
             <img
-              className="w-14 h-14 object-contain max-[400px]:hidden"
+              className="w-14 h-14 object-contain  max-[469px]:hidden"
               src="/img/rocket.png"
               alt="rocket"
             />
-            <p className="text-[42px] ml-[1.4rem] z-20 max-[440px]:text-[30px] max-[400px]:ml-0">
+            <p className="text-[35px] ml-[1.4rem] z-20 max-[440px]:text-[30px] max-[430px]:ml-[0rem]   ">
               끊임없는 도전과 학습
             </p>
           </div>
           <div>
             <p
               className={
-                "regular-font text-[25px] z-20 ml-[5rem] mt-[1rem] w-[74vw] max-[440px]:text-[13px] max-[430px]:ml-0"
+                "regular-font text-[20px] z-20 ml-[5rem] mt-[1rem] w-[74vw] max-[469px]:ml-[1.5rem]  max-[469px]:text-[19px]  max-[430px]:ml-0"
               }
             >
               진로를 방황하던 중 웹 개발을 접하게 되었습니다.<br></br>
@@ -153,9 +153,8 @@ export default function Introduction() {
               <br></br>
               낯선 기술에도 두려워하지 않고 적극적으로 도전하고 있습니다.
               <br></br>
-              <br></br>
-              현재는 Tailwind CSS와 TypeScript를 공부하며 최신 기술 트렌드에
-              빠르게 적응하고자 노력하고 있습니다.<br></br>
+              
+              
               <br></br>
               경험과 열정을 바탕으로 끊임없이 발전하는 것이 제 목표입니다.
             </p>
@@ -163,37 +162,36 @@ export default function Introduction() {
         </div>
 
         <div
-          className={`w-full z-20 max-[1117px]:ml-[5rem] max-[620px]:ml-[2rem] max-[485px]:absolute max-[485px]:left-[23rem] max-[440px]:left-[15rem] opacity-0
+          className={`w-full  z-20 max-[1117px]:ml-[-3rem] max-[620px]:ml-[-3rem] max-[485px]:absolute max-[485px]:left-[23rem] max-[440px]:left-[23rem] max-[367px]:left-[20rem] opacity-0
         ${changeScroll ? "" : "animate-move-left"}
         ${changeScroll && changeCount ? "animate-move-right-opacity2" : ""} `}
         >
           <div className={`flex items-center`}>
             <img
-              className="w-14 h-14 object-contain max-[400px]:hidden"
+              className="w-14 h-14 object-contain max-[469px]:hidden"
               src="/img/rocket.png"
               alt="rocket"
             />
-            <p className="text-[42px] ml-[1.4rem] z-10 max-[440px]:text-[30px] max-[400px]:ml-[3rem]">
+            <p className="text-[42px] ml-[1.4rem] z-10 max-[1125px]:text-[35px] max-[440px]:text-[30px] max-[460px]:text-[30px] max-[400px]:ml-[3rem] max-[469px]:ml-[5rem]">
               세심하고 효율적인 코드
             </p>
           </div>
 
           <div>
-            <p className="regular-font text-[25px]  ml-[5rem] mt-[1rem] w-[74rem] max-[440px]:text-[13px] max-[400px]:ml-[3rem] ">
+            <p className="regular-font text-[22px]  ml-[5rem] mt-[1rem] w-[70vw] max-[1125px]:text-[22px]  max-[860px]:text-[17px] max-[477px]:text-[16px] max-[400px]:ml-[3rem] ">
               웹 개발에 있어 무엇보다 중요한 점은 사용자의 편의라고 생각합니다.{" "}
               <br></br>
               저는 사용자의 편의를 위해 인터페이스 디자인과 디테일을 중요시
-              <br className="hidden max-[430px]:block" />
+              <br  />
               여기고 있습니다. <br></br>
               <br></br>
               코드를 간결하고 효율적으로 작성하며 사용에 있어 불편한 요소를
-              <br className="hidden max-[430px]:block" />
-              최소화 하기 위해
-              <br className="max-[430px]:hidden" /> 항상 노력하고 있습니다.
+              <br />
+              최소화 하기 위해 항상 노력하고 있습니다.
               <br></br>
               <br></br>
               노력을 바탕으로 언제나 사용자의 입장에서 생각하며 최적의
-              <br className="hidden max-[430px]:block" /> 결과물을 만들어내고자
+              <br /> 결과물을 만들어내고자
               합니다.
             </p>
           </div>

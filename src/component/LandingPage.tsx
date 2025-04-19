@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { useScroll } from "../context/ScrollContext";
 
 export default function LandingPage() {
@@ -6,14 +6,17 @@ export default function LandingPage() {
   const [starTimer, setStarTimer] = useState<boolean>(true);
   const [mainText, setMainText] = useState<boolean>(false);
   const [mainLight, setMainLight] = useState<number>(0);
+  
 
   const {landingRef, introRef, skillRef, projectRef, contactRef } = useScroll();
 
   const scrollTo = (ref: React.RefObject<HTMLDivElement | null>) => {
+    
     ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   useEffect(() => {
+
     const timer = setTimeout((): void => {
       setIsTriangle(true);
     }, 2200);
@@ -54,7 +57,7 @@ export default function LandingPage() {
   return (
     // --------우주 배경---------
     <div
-      className="relative  min-h-screen overflow-hidden bg-cover z-20  "
+      className="relative  h-screen overflow-hidden bg-cover z-20  "
       style={{
         backgroundImage: "url('/img/우주.png')",
         backgroundSize: "cover",
