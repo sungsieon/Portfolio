@@ -142,7 +142,7 @@ export default function Introduction() {
           <div>
             <p
               className={
-                "regular-font text-[20px] z-20 ml-[5rem] mt-[1rem] w-[74vw] max-[469px]:ml-[1.5rem]  max-[469px]:text-[19px]  max-[430px]:ml-0"
+                "regular-font text-[30px] z-20 ml-[5rem] mt-[1rem] w-[74vw] max-[469px]:ml-[1.5rem]  max-[469px]:text-[19px]  max-[430px]:ml-0"
               }
             >
               진로를 방황하던 중 웹 개발을 접하게 되었습니다.<br></br>
@@ -157,6 +157,7 @@ export default function Introduction() {
               
               <br></br>
               경험과 열정을 바탕으로 끊임없이 발전하는 것이 제 목표입니다.
+              <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>
             </p>
           </div>
         </div>
@@ -178,7 +179,7 @@ export default function Introduction() {
           </div>
 
           <div>
-            <p className="regular-font text-[22px]  ml-[5rem] mt-[1rem] w-[70vw] max-[1125px]:text-[22px]  max-[860px]:text-[17px] max-[477px]:text-[16px] max-[400px]:ml-[3rem] ">
+            <p className="regular-font text-[30px]  ml-[5rem] mt-[1rem] w-[70vw] max-[1125px]:text-[22px]  max-[860px]:text-[19px] max-[477px]:text-[18.5px] max-[400px]:ml-[3rem] ">
               웹 개발에 있어 무엇보다 중요한 점은 사용자의 편의라고 생각합니다.{" "}
               <br></br>
               저는 사용자의 편의를 위해 인터페이스 디자인과 디테일을 중요시
