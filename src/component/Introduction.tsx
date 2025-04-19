@@ -142,7 +142,7 @@ export default function Introduction() {
           <div>
             <p
               className={
-                "regular-font text-[30px] z-20 ml-[5rem] mt-[1rem] w-[74vw] max-[469px]:ml-[1.5rem]  max-[469px]:text-[19px]  max-[430px]:ml-0"
+                "regular-font text-[30px] z-20 ml-[5rem] mt-[1rem] w-[74vw] max-[1125px]:text-[22px] max-[469px]:ml-[1.5rem]  max-[469px]:text-[19px]  max-[430px]:ml-0"
               }
             >
               진로를 방황하던 중 웹 개발을 접하게 되었습니다.<br></br>
